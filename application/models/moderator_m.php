@@ -1,0 +1,39 @@
+<?php
+
+class Moderator_m extends CI_Model
+{
+    public function Tambah()
+    {
+        $data = [
+            "nama_moderator" => $this->input->post('nama_moderator', true),
+            "pekerjaan" => $this->input->post('pekerjaan', true),
+            "email" => $this->input->post('email', true),
+            "hp" => $this->input->post('hp', true),
+            "alamat" => $this->input->post('alamat', true),
+        ];
+        $this->db->insert('moderator', $data);
+    }
+    public function hapus($id)
+    {
+        $this->db->delete('moderator', ['id' => $id]);
+    }
+    public function getModeratorId($id)
+    {
+        return $this->db->get_where('moderator', ['id' => $id])->row_array();
+    }
+
+
+    public function update()
+    {
+        $data = [
+            "nama_moderator" => $this->input->post('nama_moderator', true),
+            "pekerjaan" => $this->input->post('pekerjaan', true),
+            "email" => $this->input->post('email', true),
+            "hp" => $this->input->post('hp', true),
+            "alamat" => $this->input->post('alamat', true),
+        ];
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('moderator', $data);
+    }
+}
+

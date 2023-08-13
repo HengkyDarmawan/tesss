@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm">
-            <h1>Dashboard</h1>
+            <h1><?php echo $title?></h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -14,11 +14,19 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+      <?= $this->session->flashdata('message'); ?>
         <div class="row">
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Data Webinar</h3>
+                  <div class="row">
+                      <div class="col-8">
+                        <h3 class="card-title"><?php echo $title?></h3>
+                      </div>
+                      <div class="col-4 text-right">
+                      <a href="<?php echo base_url()?>index.php/panwebinar/tambah" class="btn btn-outline-primary btn-sm">Tambah</a>
+                      </div>
+                  </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -31,6 +39,7 @@
                     <th>Tipe</th>
                     <th>Waktu</th>
                     <th>Lokasi</th>
+                    <th>Moderator</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -40,12 +49,14 @@
                         <tr>
                             <td><?= $i++; ?></td>
                             <td><?= $webinar['tema']; ?></td>
-                            <td><?= $webinar['pembicara_id']; ?></td>
+                            <td><?= $webinar['nama_pembicara']; ?></td>
                             <td><?= $webinar['tipe']; ?></td>
-                            <td><?= $webinar['waktu']; ?></td>
+                            <td><?= $webinar['tanggal']; ?> <br>(<?= $webinar['waktu']?>)</td>
                             <td><?= $webinar['lokasi']; ?></td>
+                            <td><?= $webinar['nama_moderator']; ?></td>
                             <td>
-                              <button class="btn btn-block btn-outline-primary btn-sm" type="button">Daftar</button>
+                            <a href="<?= base_url(); ?>index.php/panwebinar/update/<?= $webinar['id_webinar']; ?>" class="btn btn-block btn-outline-success btn-sm">Update</a>
+                              <a href="<?= base_url(); ?>index.php/panwebinar/hapus/<?= $webinar['id_webinar']; ?>" class="btn btn-block btn-outline-danger btn-sm" onclick="return confirm('yakin?');">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -58,6 +69,7 @@
                     <th>Tipe</th>
                     <th>Waktu</th>
                     <th>Lokasi</th>
+                    <th>Moderator</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>

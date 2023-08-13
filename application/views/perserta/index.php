@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm">
-            <h1>Dashboard</h1>
+            <h1><?php echo $title?></h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -27,48 +27,44 @@
                   <tr>
                     <th>No.</th>
                     <th>Tema</th>
-                    <th>Pembicara</th>
-                    <th>Tipe</th>
-                    <th>Waktu</th>
+                    <th>Perserta</th>
+                    <th>Waktu Daftar</th>
                     <th>Lokasi</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-                    <td>1</td>
-                    <td>Ekspor</td>
-                    <td>Maya</td>
-                    <td>Seminar</td>
-                    <td>21 Juli 2023 19.00 - 21.00</td>
-                    <td>Jl. Tj. Duren Bar. 2 No.1, RT.1/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470</td>
-                    <td>
-                      <span class="badge badge-pill badge-warning ">review</span>
-                    </td>
-                    <td>
-                      <button class="btn btn-block btn-outline-primary btn-sm" type="button">Absen</button>
-                    </td>
-                  <!-- <?php $i = 1; ?>
+                  <?php $i = 1; ?>
                     <?php foreach ($daftar_webinar as $dafwebinar) : ?>
                         <tr>
                             <td><?= $i++; ?></td>
-                            <td><?= $dafwebinar['webinar_id']; ?></td>
-                            <td><?= $dafwebinar['user_id']; ?></td>
+                            <td><?= $dafwebinar['tema']; ?></td>
+                            <td><?= $dafwebinar['name']; ?></td>
                             <td><?= $dafwebinar['waktu_daftar']; ?></td>
-                            <td><?= $dafwebinar['status']; ?></td>
+                            <td><?= $dafwebinar['lokasi']; ?></td>
+                            <td>
+                                <?php
+                                if ($dafwebinar['status'] == "review") { ?>
+                                    <span class="badge badge-pill badge-warning "><?= $dafwebinar['status']; ?></span>
+                                <?php } else if ($dafwebinar['status'] == "terdaftar") { ?>
+                                    <span class="badge badge-pill badge-success "><?= $dafwebinar['status']; ?></span>
+                                <?php } else { ?>
+                                    <span class="badge badge-pill badge-danger "><?= $dafwebinar['status']; ?></span>
+                                <?php } ?>
+                            </td>
                             <td>
                               <button class="btn btn-block btn-outline-primary btn-sm" type="button">Absen</button>
                             </td>
                         </tr>
-                    <?php endforeach; ?> -->
+                    <?php endforeach; ?>
                   </tbody>
                   <tfoot>
                   <tr>
                     <th>No.</th>
                     <th>Tema</th>
-                    <th>Pembicara</th>
-                    <th>Tipe</th>
-                    <th>Waktu</th>
+                    <th>Perserta</th>
+                    <th>Waktu Daftar</th>
                     <th>Lokasi</th>
                     <th>Status</th>
                     <th>Action</th>

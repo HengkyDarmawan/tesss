@@ -5,8 +5,9 @@ class Webinar_m extends CI_Model
     public function getWebinar(){
         $this->db->select('*');
         $this->db->from('webinar');
-        $this->db->join('pembicara', 'webinar.pembicara_id = pembicara.id', 'left');
-        $this->db->join('moderator', 'webinar.moderator_id = moderator.id', 'left');
+        $this->db->join('pembicara', 'webinar.pembicara_id = pembicara.id_pembicara');
+        $this->db->join('moderator', 'webinar.moderator_id = moderator.id_moderator');
+        $this->db->order_by('webinar.id_webinar', 'DESC');
         return $this->db->get()->result_array();
     }
     public function Tambah()
@@ -24,11 +25,11 @@ class Webinar_m extends CI_Model
     }
     public function hapus($id)
     {
-        $this->db->delete('webinar', ['id' => $id]);
+        $this->db->delete('webinar', ['id_webinar' => $id]);
     }
     public function getWebinarId($id)
     {
-        return $this->db->get_where('webinar', ['id' => $id])->row_array();
+        return $this->db->get_where('webinar', ['id_webinar' => $id])->row_array();
     }
 
 
@@ -43,7 +44,7 @@ class Webinar_m extends CI_Model
             "pembicara_id" => $this->input->post('pembicara_id', true),
             "moderator_id" => $this->input->post('moderator_id', true),
         ];
-        $this->db->where('id', $this->input->post('id'));
+        $this->db->where('id_webinar', $this->input->post('id'));
         $this->db->update('webinar', $data);
     }
 }

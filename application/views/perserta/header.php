@@ -71,7 +71,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?php echo base_url();?>index.php/perserta/Webinar" class="nav-link">
+            <a href="<?php echo base_url();?>index.php/perwebinar/index" class="nav-link">
               <i class="nav-icon fas fa-fw fa-chalkboard-teacher"></i>
               <p>Seminar / Webinar</p>
             </a>

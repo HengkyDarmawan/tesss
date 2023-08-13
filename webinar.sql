@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 10, 2023 at 05:00 AM
+-- Generation Time: Aug 13, 2023 at 08:33 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `absensi` (
-  `id` int(11) NOT NULL,
+  `id_absensi` int(11) NOT NULL,
   `webinar_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `waktu_absen` varchar(128) NOT NULL,
@@ -41,9 +41,9 @@ CREATE TABLE `absensi` (
 -- Dumping data for table `absensi`
 --
 
-INSERT INTO `absensi` (`id`, `webinar_id`, `user_id`, `waktu_absen`, `bukti`, `sesi`, `status`) VALUES
-(1, 1, 8, '20 Juli 2023 21.00', 'absen.jpg', 1, 'review'),
-(2, 2, 8, '21 Juli 2023 21.00', 'absen.jpg', 1, 'approved');
+INSERT INTO `absensi` (`id_absensi`, `webinar_id`, `user_id`, `waktu_absen`, `bukti`, `sesi`, `status`) VALUES
+(1, 1, 8, '20 Juli 2023 21.00', 'absen.jpg', 1, 'approved'),
+(2, 3, 8, '21 Juli 2023 21.00', 'absen.jpg', 1, 'approved');
 
 -- --------------------------------------------------------
 
@@ -52,7 +52,7 @@ INSERT INTO `absensi` (`id`, `webinar_id`, `user_id`, `waktu_absen`, `bukti`, `s
 --
 
 CREATE TABLE `daftar_webinar` (
-  `id` int(11) NOT NULL,
+  `id_daftar_webinar` int(11) NOT NULL,
   `webinar_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `waktu_daftar` datetime NOT NULL,
@@ -63,9 +63,10 @@ CREATE TABLE `daftar_webinar` (
 -- Dumping data for table `daftar_webinar`
 --
 
-INSERT INTO `daftar_webinar` (`id`, `webinar_id`, `user_id`, `waktu_daftar`, `status`) VALUES
+INSERT INTO `daftar_webinar` (`id_daftar_webinar`, `webinar_id`, `user_id`, `waktu_daftar`, `status`) VALUES
 (1, 1, 8, '2023-07-17 05:40:25', 'review'),
-(2, 2, 8, '2023-07-17 05:40:25', 'terdaftar');
+(2, 3, 8, '2023-07-17 05:40:25', 'terdaftar'),
+(3, 1, 13, '2023-08-13 07:28:07', 'ditolak');
 
 -- --------------------------------------------------------
 
@@ -74,7 +75,7 @@ INSERT INTO `daftar_webinar` (`id`, `webinar_id`, `user_id`, `waktu_daftar`, `st
 --
 
 CREATE TABLE `moderator` (
-  `id` int(11) NOT NULL,
+  `id_moderator` int(11) NOT NULL,
   `nama_moderator` varchar(128) NOT NULL,
   `pekerjaan` varchar(128) NOT NULL,
   `email` varchar(128) NOT NULL,
@@ -86,10 +87,10 @@ CREATE TABLE `moderator` (
 -- Dumping data for table `moderator`
 --
 
-INSERT INTO `moderator` (`id`, `nama_moderator`, `pekerjaan`, `email`, `hp`, `alamat`) VALUES
+INSERT INTO `moderator` (`id_moderator`, `nama_moderator`, `pekerjaan`, `email`, `hp`, `alamat`) VALUES
 (1, 'Siti', 'Moderator', 'siti@gmail.com', '082411225533', 'Tanggerang'),
 (2, 'Eko', 'Moderator', 'eko@gmail.com', '085332463499', 'Bandung'),
-(3, 'tes', 'Dosen', 'tes@gmail.com', '086911235542', 'Jakarta Selatan');
+(3, 'tesa', 'Dosena', 'tesa@gmail.com', '086911235542', 'Jakarta Selatana');
 
 -- --------------------------------------------------------
 
@@ -98,7 +99,7 @@ INSERT INTO `moderator` (`id`, `nama_moderator`, `pekerjaan`, `email`, `hp`, `al
 --
 
 CREATE TABLE `pembicara` (
-  `id` int(11) NOT NULL,
+  `id_pembicara` int(11) NOT NULL,
   `nama_pembicara` varchar(128) NOT NULL,
   `pekerjaan` varchar(128) NOT NULL,
   `email` varchar(128) NOT NULL,
@@ -111,7 +112,7 @@ CREATE TABLE `pembicara` (
 -- Dumping data for table `pembicara`
 --
 
-INSERT INTO `pembicara` (`id`, `nama_pembicara`, `pekerjaan`, `email`, `hp`, `link`, `alamat`) VALUES
+INSERT INTO `pembicara` (`id_pembicara`, `nama_pembicara`, `pekerjaan`, `email`, `hp`, `link`, `alamat`) VALUES
 (1, 'Maya', 'Eksportir Rumput Laut', 'maya@gmail.com', '085188452631', 'https://getbootstrap.com/', 'Jakarta Pusat'),
 (2, 'Desi', 'Web Developer', 'desi@gmail.com', '085412345623', 'https://getbootstrap.com/', 'Bekasi'),
 (3, 'Hengky Darmawan', 'Fullstack Web Developer', 'hengkydarmawan66@gmail.com', '082186629996', 'hengkydarmawan.github.io/', 'Jakarta Barat'),
@@ -175,7 +176,7 @@ INSERT INTO `user_role` (`id`, `role`) VALUES
 --
 
 CREATE TABLE `webinar` (
-  `id` int(11) NOT NULL,
+  `id_webinar` int(11) NOT NULL,
   `tema` varchar(128) NOT NULL,
   `tipe` varchar(128) NOT NULL,
   `lokasi` text NOT NULL,
@@ -189,11 +190,12 @@ CREATE TABLE `webinar` (
 -- Dumping data for table `webinar`
 --
 
-INSERT INTO `webinar` (`id`, `tema`, `tipe`, `lokasi`, `tanggal`, `waktu`, `pembicara_id`, `moderator_id`) VALUES
-(1, 'Frontend', 'webinar', 'online', '19 Januari 2020', '16.00', 2, 1),
+INSERT INTO `webinar` (`id_webinar`, `tema`, `tipe`, `lokasi`, `tanggal`, `waktu`, `pembicara_id`, `moderator_id`) VALUES
+(1, 'Frontend', 'webinar', 'online', '2023-08-01', '16.00', 2, 1),
 (3, 'tes', 'webinar', 'online', '2023-08-08', '19.00 -  selesai', 1, 1),
-(5, 'r', 'webinar', 's', '2023-08-14', 's', 1, 2),
-(6, 'h', 'webinar', 'h', '2023-08-23', 'u', 1, 2);
+(6, 'Kopi Ekspor', 'webinar', 'Online', '2023-08-23', '06.00 - selesai', 1, 2),
+(7, 'js', 'webinar', 'online', '2023-08-16', '17.00 - selesai', 3, 1),
+(8, 'tess', 'seminar', 'jakartas', '2023-08-26', '19.00 -  selesais', 2, 3);
 
 --
 -- Indexes for dumped tables
@@ -203,25 +205,25 @@ INSERT INTO `webinar` (`id`, `tema`, `tipe`, `lokasi`, `tanggal`, `waktu`, `pemb
 -- Indexes for table `absensi`
 --
 ALTER TABLE `absensi`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_absensi`);
 
 --
 -- Indexes for table `daftar_webinar`
 --
 ALTER TABLE `daftar_webinar`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_daftar_webinar`);
 
 --
 -- Indexes for table `moderator`
 --
 ALTER TABLE `moderator`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_moderator`);
 
 --
 -- Indexes for table `pembicara`
 --
 ALTER TABLE `pembicara`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_pembicara`);
 
 --
 -- Indexes for table `user`
@@ -239,7 +241,7 @@ ALTER TABLE `user_role`
 -- Indexes for table `webinar`
 --
 ALTER TABLE `webinar`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_webinar`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -249,25 +251,25 @@ ALTER TABLE `webinar`
 -- AUTO_INCREMENT for table `absensi`
 --
 ALTER TABLE `absensi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_absensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `daftar_webinar`
 --
 ALTER TABLE `daftar_webinar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_daftar_webinar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `moderator`
 --
 ALTER TABLE `moderator`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_moderator` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pembicara`
 --
 ALTER TABLE `pembicara`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_pembicara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -285,7 +287,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `webinar`
 --
 ALTER TABLE `webinar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_webinar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

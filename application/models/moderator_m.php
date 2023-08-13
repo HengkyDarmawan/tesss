@@ -15,11 +15,11 @@ class Moderator_m extends CI_Model
     }
     public function hapus($id)
     {
-        $this->db->delete('moderator', ['id' => $id]);
+        $this->db->delete('moderator', ['id_moderator' => $id]);
     }
     public function getModeratorId($id)
     {
-        return $this->db->get_where('moderator', ['id' => $id])->row_array();
+        return $this->db->get_where('moderator', ['id_moderator' => $id])->row_array();
     }
 
 
@@ -32,7 +32,7 @@ class Moderator_m extends CI_Model
             "hp" => $this->input->post('hp', true),
             "alamat" => $this->input->post('alamat', true),
         ];
-        $this->db->where('id', $this->input->post('id'));
+        $this->db->where('id_moderator', $this->input->post('id'));
         $this->db->update('moderator', $data);
     }
 }

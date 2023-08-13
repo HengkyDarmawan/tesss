@@ -23,7 +23,7 @@
                     <!-- /.card-header -->
                     <!-- form start -->
                     <form action="" method="post">
-                    <input type="hidden" name="id" value="<?= $moderator['id']; ?>">
+                    <input type="hidden" name="id" value="<?= $moderator['id_moderator']; ?>">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">Nama Moderator</label>

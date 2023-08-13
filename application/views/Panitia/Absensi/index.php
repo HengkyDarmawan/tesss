@@ -47,8 +47,8 @@
                     <?php foreach ($absensi as $absensi) : ?>
                         <tr>
                             <td><?= $i++; ?></td>
-                            <td><?= $absensi['webinar_id']; ?></td>
-                            <td><?= $absensi['user_id']; ?></td>
+                            <td><?= $absensi['tema']; ?></td>
+                            <td><?= $absensi['name']; ?></td>
                             <td><?= $absensi['waktu_absen']; ?></td>
                             <td><?= $absensi['bukti']; ?></td>
                             <td><?= $absensi['sesi']; ?></td>
@@ -63,7 +63,11 @@
                                 <?php } ?>
                             </td>
                             <td>
-                              <button class="btn btn-block btn-outline-success btn-sm" type="button">Update</button>
+                                <?php if($absensi['status'] == 'review') { ?>
+                                    <a href="<?= base_url(); ?>index.php/panabsensi/approved/<?= $absensi['id_absensi']; ?>" class="btn btn-outline-success btn-sm" onclick="return confirm('yakin?');">Approved</a>
+                                    <a href="<?= base_url(); ?>index.php/panabsensi/rejected/<?= $absensi['id_absensi']; ?>" class="btn btn-outline-danger btn-sm" onclick="return confirm('yakin?');">Rejected</a>
+                                <?php } ?>
+                                <a href="<?= base_url(); ?>index.php/panabsensi/sertifikat/<?= $absensi['id_absensi']; ?>" class="btn btn-outline-success btn-sm">Sertifikat</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

@@ -16,11 +16,11 @@ class Pembicara_m extends CI_Model
     }
     public function hapus($id)
     {
-        $this->db->delete('pembicara', ['id' => $id]);
+        $this->db->delete('pembicara', ['id_pembicara' => $id]);
     }
     public function getPembicaraId($id)
     {
-        return $this->db->get_where('pembicara', ['id' => $id])->row_array();
+        return $this->db->get_where('pembicara', ['id_pembicara' => $id])->row_array();
     }
 
 
@@ -34,7 +34,7 @@ class Pembicara_m extends CI_Model
             "link" => $this->input->post('link', true),
             "alamat" => $this->input->post('alamat', true),
         ];
-        $this->db->where('id', $this->input->post('id'));
+        $this->db->where('id_pembicara', $this->input->post('id'));
         $this->db->update('pembicara', $data);
     }
 }

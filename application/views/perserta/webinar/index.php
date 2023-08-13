@@ -18,14 +18,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                  <div class="row">
-                      <div class="col-8">
-                        <h3 class="card-title">Data Webinar</h3>
-                      </div>
-                      <div class="col-4 text-right">
-                        <button class="btn btn-outline-primary btn-sm" type="button">Tambah</button>
-                      </div>
-                  </div>
+                <h3 class="card-title">Data Webinar</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -38,6 +31,7 @@
                     <th>Tipe</th>
                     <th>Waktu</th>
                     <th>Lokasi</th>
+                    <th>Moderator</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -47,13 +41,13 @@
                         <tr>
                             <td><?= $i++; ?></td>
                             <td><?= $webinar['tema']; ?></td>
-                            <td><?= $webinar['pembicara_id']; ?></td>
+                            <td><?= $webinar['nama_pembicara']; ?></td>
                             <td><?= $webinar['tipe']; ?></td>
                             <td><?= $webinar['waktu']; ?></td>
                             <td><?= $webinar['lokasi']; ?></td>
+                            <td><?= $webinar['nama_moderator']; ?></td>
                             <td>
-                              <button class="btn btn-block btn-outline-success btn-sm" type="button">Update</button>
-                              <button class="btn btn-block btn-outline-danger btn-sm" type="button">Delete</button>
+                            <a href="<?php echo base_url()?>index.php/perwebinar/daftar/<?= $webinar['id_moderator']; ?>" class="btn btn-outline-primary btn-sm">Daftar</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -66,6 +60,7 @@
                     <th>Tipe</th>
                     <th>Waktu</th>
                     <th>Lokasi</th>
+                    <th>Moderator</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>

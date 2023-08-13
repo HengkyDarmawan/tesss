@@ -55,8 +55,8 @@
                             <td><?= $pembicara['link']; ?></td>
                             <td><?= $pembicara['alamat']; ?></td>
                             <td>
-                            <a href="<?= base_url(); ?>index.php/panpembicara/update/<?= $pembicara['id']; ?>" class="btn btn-block btn-outline-success btn-sm">Update</a>
-                              <a href="<?= base_url(); ?>index.php/panpembicara/hapus/<?= $pembicara['id']; ?>" class="btn btn-block btn-outline-danger btn-sm" onclick="return confirm('yakin?');">Delete</a>
+                            <a href="<?= base_url(); ?>index.php/panpembicara/update/<?= $pembicara['id_pembicara']; ?>" class="btn btn-block btn-outline-success btn-sm">Update</a>
+                              <a href="<?= base_url(); ?>index.php/panpembicara/hapus/<?= $pembicara['id_pembicara']; ?>" class="btn btn-block btn-outline-danger btn-sm" onclick="return confirm('yakin?');">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

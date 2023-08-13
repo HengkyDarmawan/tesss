@@ -2,8 +2,6 @@
 
   <div class="card">
     <div class="card-body register-card-body">
-      <img src="<?php echo base_url('assets/');?>img/logo.jpg" class="img-fluid" alt="Responsive image">
-      <hr>
       <h4 class="login-box-msg text-bold">Register Webinar</h4>
 
       <form action="<?php echo base_url()?>index.php/auth/registration" method="post">

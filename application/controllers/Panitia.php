@@ -7,41 +7,27 @@ class Panitia extends CI_Controller {
 	{
 		$data['title'] = 'Dashboard Panitia';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['daftar_webinar'] = $this->db->get('daftar_webinar')->result_array();
+        $data['daftar_webinar'] = $this->users_m->getDaftarWebinar();
 
-        $this->load->view('panitia/header', $data);
-        $this->load->view('panitia/index', $data);
-        $this->load->view('panitia/footer');
+        $this->load->view('Panitia/header', $data);
+        $this->load->view('Panitia/index', $data);
+        $this->load->view('Panitia/footer');
 	}
-    public function Users()
+    public function approved($id)
 	{
-		$data['title'] = 'Users';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['users'] = $this->db->get('user')->result_array();
-
-        $this->load->view('panitia/header', $data);
-        $this->load->view('panitia/users', $data);
-        $this->load->view('panitia/footer');
+		$this->db->set('status', 'terdaftar');
+		$this->db->where('id_daftar_webinar', $id);
+		$this->db->update('daftar_webinar');
+		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">webinar Di Daftarkan !!!</div>');
+		redirect('index.php/panitia');
 	}
-    public function Absensi()
+	public function rejected($id)
 	{
-		$data['title'] = 'Absen';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['absensi'] = $this->db->get('absensi')->result_array();
-
-        $this->load->view('panitia/header', $data);
-        $this->load->view('panitia/absensi', $data);
-        $this->load->view('panitia/footer');
-	}
-    public function Webinar()
-	{
-		$data['title'] = 'Webinar / Seminar Perserta';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['webinar'] = $this->db->get('webinar')->result_array();
-
-        $this->load->view('panitia/header', $data);
-        $this->load->view('panitia/webinar', $data);
-        $this->load->view('panitia/footer');
+		$this->db->set('status', 'ditolak');
+		$this->db->where('id_daftar_webinar', $id);
+		$this->db->update('daftar_webinar');
+		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">webinar Di tolak !!!</div>');
+		redirect('index.php/panitia');
 	}
 	public function Profile()
 	{

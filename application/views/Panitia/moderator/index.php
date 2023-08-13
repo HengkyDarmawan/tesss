@@ -53,8 +53,8 @@
                             <td><?= $moderator['hp']; ?></td>
                             <td><?= $moderator['alamat']; ?></td>
                             <td>
-                            <a href="<?= base_url(); ?>index.php/panmoderator/update/<?= $moderator['id']; ?>" class="btn btn-block btn-outline-success btn-sm">Update</a>
-                              <a href="<?= base_url(); ?>index.php/panmoderator/hapus/<?= $moderator['id']; ?>" class="btn btn-block btn-outline-danger btn-sm" onclick="return confirm('yakin?');">Delete</a>
+                            <a href="<?= base_url(); ?>index.php/panmoderator/update/<?= $moderator['id_moderator']; ?>" class="btn btn-block btn-outline-success btn-sm">Update</a>
+                              <a href="<?= base_url(); ?>index.php/panmoderator/hapus/<?= $moderator['id_moderator']; ?>" class="btn btn-block btn-outline-danger btn-sm" onclick="return confirm('yakin?');">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

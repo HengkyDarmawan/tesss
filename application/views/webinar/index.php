@@ -55,8 +55,8 @@
                             <td><?= $webinar['lokasi']; ?></td>
                             <td><?= $webinar['nama_moderator']; ?></td>
                             <td>
-                            <a href="<?= base_url(); ?>index.php/webinar/update/<?= $webinar['id']; ?>" class="btn btn-block btn-outline-success btn-sm">Update</a>
-                              <a href="<?= base_url(); ?>index.php/webinar/hapus/<?= $webinar['id']; ?>" class="btn btn-block btn-outline-danger btn-sm" onclick="return confirm('yakin?');">Delete</a>
+                            <a href="<?= base_url(); ?>index.php/webinar/update/<?= $webinar['id_webinar']; ?>" class="btn btn-block btn-outline-success btn-sm">Update</a>
+                              <a href="<?= base_url(); ?>index.php/webinar/hapus/<?= $webinar['id_webinar']; ?>" class="btn btn-block btn-outline-danger btn-sm" onclick="return confirm('yakin?');">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

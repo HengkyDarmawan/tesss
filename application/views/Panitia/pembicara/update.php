@@ -23,7 +23,7 @@
                     <!-- /.card-header -->
                     <!-- form start -->
                     <form action="" method="post">
-                    <input type="hidden" name="id" value="<?= $pembicara['id']; ?>">
+                    <input type="hidden" name="id" value="<?= $pembicara['id_pembicara']; ?>">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">Nama</label>

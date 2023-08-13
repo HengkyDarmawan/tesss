@@ -2,7 +2,7 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <img src="<?php echo base_url('assets/');?>img/logo.jpg" class="img-fluid" alt="Responsive image">
+      <h4 class="login-box-msg text-bold">Universitas xyz</h4>
       <hr>
       <h4 class="login-box-msg text-bold">Login Webinar</h4>
       <?php echo $this->session->flashdata('message'); ?>

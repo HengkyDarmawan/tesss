@@ -77,7 +77,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?php echo base_url();?>index.php/admin/absensi" class="nav-link">
+            <a href="<?php echo base_url();?>index.php/absensi/index" class="nav-link">
               <i class="nav-icon fas fa-fw fa-user-check"></i>
               <p>Absensi</p>
             </a>

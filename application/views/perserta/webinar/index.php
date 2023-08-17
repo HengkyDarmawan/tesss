@@ -29,6 +29,7 @@
                     <th>Tema</th>
                     <th>Pembicara</th>
                     <th>Tipe</th>
+                    <th>Tanggal</th>
                     <th>Waktu</th>
                     <th>Lokasi</th>
                     <th>Moderator</th>
@@ -43,11 +44,12 @@
                             <td><?= $webinar['tema']; ?></td>
                             <td><?= $webinar['nama_pembicara']; ?></td>
                             <td><?= $webinar['tipe']; ?></td>
+                            <td><?= $webinar['tanggal']; ?></td>
                             <td><?= $webinar['waktu']; ?></td>
                             <td><?= $webinar['lokasi']; ?></td>
                             <td><?= $webinar['nama_moderator']; ?></td>
                             <td>
-                            <a href="<?php echo base_url()?>index.php/perwebinar/daftar/<?= $webinar['id_moderator']; ?>" class="btn btn-outline-primary btn-sm">Daftar</a>
+                            <a href="<?php echo base_url()?>index.php/perwebinar/daftar/<?= $webinar['id_webinar']; ?>" class="btn btn-outline-primary btn-sm">Daftar</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -58,6 +60,7 @@
                     <th>Tema</th>
                     <th>Pembicara</th>
                     <th>Tipe</th>
+                    <th>Tanggal</th>
                     <th>Waktu</th>
                     <th>Lokasi</th>
                     <th>Moderator</th>

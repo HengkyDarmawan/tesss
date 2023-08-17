@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2023 at 08:33 AM
+-- Generation Time: Aug 17, 2023 at 08:34 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -29,11 +29,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `absensi` (
   `id_absensi` int(11) NOT NULL,
+  `daftar_webinar_id` int(11) NOT NULL,
   `webinar_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `waktu_absen` varchar(128) NOT NULL,
   `bukti` varchar(128) NOT NULL,
-  `sesi` int(11) NOT NULL,
   `status` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -41,9 +41,9 @@ CREATE TABLE `absensi` (
 -- Dumping data for table `absensi`
 --
 
-INSERT INTO `absensi` (`id_absensi`, `webinar_id`, `user_id`, `waktu_absen`, `bukti`, `sesi`, `status`) VALUES
-(1, 1, 8, '20 Juli 2023 21.00', 'absen.jpg', 1, 'approved'),
-(2, 3, 8, '21 Juli 2023 21.00', 'absen.jpg', 1, 'approved');
+INSERT INTO `absensi` (`id_absensi`, `daftar_webinar_id`, `webinar_id`, `user_id`, `waktu_absen`, `bukti`, `status`) VALUES
+(1, 5, 1, 8, '20 Juli 2023 21.00', 'absen.jpg', 'review'),
+(3, 5, 6, 8, '2023-08-17 08:32:46', 'https://drive.google.com/file/d/1JXuYDEBQW7kYOtqVRixBKnMXLqtsPR9v/view?usp=drive_link', 'approved');
 
 -- --------------------------------------------------------
 
@@ -64,9 +64,8 @@ CREATE TABLE `daftar_webinar` (
 --
 
 INSERT INTO `daftar_webinar` (`id_daftar_webinar`, `webinar_id`, `user_id`, `waktu_daftar`, `status`) VALUES
-(1, 1, 8, '2023-07-17 05:40:25', 'review'),
-(2, 3, 8, '2023-07-17 05:40:25', 'terdaftar'),
-(3, 1, 13, '2023-08-13 07:28:07', 'ditolak');
+(5, 6, 8, '2023-08-17 07:01:45', 'terdaftar'),
+(6, 1, 15, '2023-08-17 07:29:34', 'terdaftar');
 
 -- --------------------------------------------------------
 
@@ -143,11 +142,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `alamat`, `hp`, `pekerjaan`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
-(6, 'Amin Admin', 'aminAdmin@gmail.com', 'Jakarta Barat', '082176659945', 'Kasir', 'default.jpg', '$2y$10$V4ZI5K9ZDS0TE1Kgo3CikO/8vlBYqms4eiJ.qw8H2puOcX2lUiGjK', 1, 1, 1689481467),
-(7, 'Amin Panitia', 'aminPanitia@gmail.com', 'Jakarta Timur', '082176659945', 'Mahasiswa', 'default.jpg', '$2y$10$ntDfMOeijhEfE/L5rtx.quHfgqIEVj1nvScLi/YhpLUKIoCpJpQCG', 2, 1, 1689481583),
-(8, 'Amin User', 'amin@gmail.com', 'Jakarta Utara', '082176659945', 'Mahasiswa', 'default.jpg', '$2y$10$VsKu26pAQO2xZuyYZj/0fetrWp.D./yVtmHLCO/U0pG.wyWL80XTS', 3, 1, 1689481620),
+(6, 'Amin Admin', 'aminAdmin@gmail.com', 'Jakarta Barat', '082176659945', 'Kasirs', 'default.jpg', '$2y$10$V4ZI5K9ZDS0TE1Kgo3CikO/8vlBYqms4eiJ.qw8H2puOcX2lUiGjK', 1, 1, 1689481467),
+(7, 'Amin Panitia', 'aminPanitia@gmail.com', 'Jakarta Timur', '082176659942', 'Mahasiswa', 'default.jpg', '$2y$10$ntDfMOeijhEfE/L5rtx.quHfgqIEVj1nvScLi/YhpLUKIoCpJpQCG', 2, 1, 1689481583),
+(8, 'Amin User', 'aminUser@gmail.com', 'Tomang, Jakarta Barat', '082176659945', 'Mahasiswa', 'amin.JPG', '$2y$10$VsKu26pAQO2xZuyYZj/0fetrWp.D./yVtmHLCO/U0pG.wyWL80XTS', 3, 1, 1689481620),
 (11, 'tes', 'tes@gmail.com', 'jak', '082189963321', 'mahasisw', 'default.jpg', '$2y$10$3B78Pf85jzpLdbl2eo2Ln.VSwr8uvCWiWl44bb.svZRTu4tlfb.N2', 3, 1, 1691350530),
-(13, 'Riko', 'rikorinaldiansyah26@gmail.com', 'Bandung', '085332163499', 'Dosen', 'default.jpg', '$2y$10$LEP9.0z1mlZrJrp3A8CsVOFfMpQ1hqwCgQSNJkycavN4UnHXHkstm', 1, 1, 1691355330);
+(13, 'Riko', 'rikorinaldiansyah26@gmail.com', 'Bandung', '085332163499', 'Dosen', 'default.jpg', '$2y$10$LEP9.0z1mlZrJrp3A8CsVOFfMpQ1hqwCgQSNJkycavN4UnHXHkstm', 1, 1, 1691355330),
+(15, 'hengky', 'hengky@gmail.com', 'jak', '082186629996', 'freelanc', 'default.jpg', '$2y$10$g8N/BLTjukClRXxF0cFXUuP6i/tlgY01potavzbs/f4cCkAlNWNam', 3, 1, 1692250161);
 
 -- --------------------------------------------------------
 
@@ -251,13 +251,13 @@ ALTER TABLE `webinar`
 -- AUTO_INCREMENT for table `absensi`
 --
 ALTER TABLE `absensi`
-  MODIFY `id_absensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_absensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `daftar_webinar`
 --
 ALTER TABLE `daftar_webinar`
-  MODIFY `id_daftar_webinar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_daftar_webinar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `moderator`
@@ -275,7 +275,7 @@ ALTER TABLE `pembicara`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `user_role`

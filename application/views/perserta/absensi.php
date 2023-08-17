@@ -5,88 +5,54 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm">
-            <h1>Dashboard</h1>
+            <h1><?php echo $title?></h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
+    <!-- left column -->
+    <div class="container">
         <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-header">
-                  <div class="row">
-                      <div class="col-8">
-                        <h3 class="card-title">Data Absensi</h3>
-                      </div>
-                      <div class="col-4 text-right">
-                        <button class="btn btn-outline-primary btn-sm" type="button">Tambah</button>
-                      </div>
-                  </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <table id="example2" class="table table-bordered table-hover">
-                  <thead>
-                  <tr>
-                    <th>No.</th>
-                    <th>Nama Webinar</th>
-                    <th>Nama</th>
-                    <th>Pekerjaan</th>
-                    <th>Email</th>
-                    <th>Hp</th>
-                    <th>Link Materi</th>
-                    <th>Alamat</th>
-                    <th>Action</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <?php $i = 1; ?>
-                    <?php foreach ($pembicara as $pembicara) : ?>
-                        <tr>
-                            <td><?= $i++; ?></td>
-                            <td><?= $pembicara['webinar_id']; ?></td>
-                            <td><?= $pembicara['nama_pembicara']; ?></td>
-                            <td><?= $pembicara['pekerjaan']; ?></td>
-                            <td><?= $pembicara['email']; ?></td>
-                            <td><?= $pembicara['hp']; ?></td>
-                            <td><?= $pembicara['link']; ?></td>
-                            <td><?= $pembicara['alamat']; ?></td>
-                            <td>
-                              <button class="btn btn-block btn-outline-success btn-sm" type="button">Update</button>
-                              <button class="btn btn-block btn-outline-danger btn-sm" type="button">Delete</button>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                  </tbody>
-                  <tfoot>
-                  <tr>
-                    <th>No.</th>
-                    <th>Nama Webinar</th>
-                    <th>Nama</th>
-                    <th>Pekerjaan</th>
-                    <th>Email</th>
-                    <th>Hp</th>
-                    <th>Link Materi</th>
-                    <th>Alamat</th>
-                    <th>Action</th>
-                  </tr>
-                  </tfoot>
-                </table>
-              </div>
-              <!-- /.card-body -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                    <h3 class="card-title"><?php echo $title?></h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form action="" method="post">
+                    <input type="hidden" name="id" value="<?php echo $dafWebinar['id_daftar_webinar']?>">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="tema">Tema</label>
+                            <input type="text" class="form-control" id="tema" name="tema" placeholder="input tema" value="<?php echo $dafWebinar['tema']?>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Nama</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="input name" value="<?php echo $user['name'];?>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="input email" value="<?php echo $user['email'];?>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="bukti">Link Bukti Absensi</label>
+                            <input type="text" class="form-control" id="bukti" name="bukti" placeholder="input bukti">
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div class="card-footer">
+                        <button type="submit" name="absen" class="btn btn-primary">Absen</button>
+                    </div>
+                    </form>
+                </div>
+                <!-- /.card -->
             </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+    </div>
   </div>
   <!-- /.content-wrapper -->
+

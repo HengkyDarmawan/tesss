@@ -30,7 +30,6 @@
                             <select class="form-control" name="pembicara_id">
                                 <option value="">Select Pembicara</option>
                                 <?php foreach ($pembicara as $pembicara) : ?>
-                                    <!-- <option value="<?= $pembicara['id_pembicara']; ?>"><?= $pembicara['nama_pembicara']; ?></option> -->
                                     <option value="<?= $pembicara['id_pembicara']; ?>" <?= $pembicara['id_pembicara'] == $webinar['pembicara_id'] ? "selected" : null ?>><?= $pembicara['nama_pembicara']; ?></option>
                                 <?php endforeach; ?>
                             </select>

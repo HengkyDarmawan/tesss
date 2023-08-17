@@ -38,7 +38,7 @@ class Users extends CI_Controller {
     public function hapus($id)
     {
         $this->users_m->hapus($id);
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data jabatan di Delete !!!</div>');
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data user di Delete !!!</div>');
         redirect('index.php/users');
     }
     public function update($id)

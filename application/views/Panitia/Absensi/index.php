@@ -37,7 +37,6 @@
                     <th>Nama Perserta</th>
                     <th>Waktu Absen</th>
                     <th>Bukti Absensi</th>
-                    <th>Sesi</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
@@ -51,7 +50,6 @@
                             <td><?= $absensi['name']; ?></td>
                             <td><?= $absensi['waktu_absen']; ?></td>
                             <td><?= $absensi['bukti']; ?></td>
-                            <td><?= $absensi['sesi']; ?></td>
                             <td>
                                 <?php
                                 if ($absensi['status'] == "review") { ?>
@@ -79,7 +77,6 @@
                     <th>Nama Perserta</th>
                     <th>Waktu Absen</th>
                     <th>Bukti Absensi</th>
-                    <th>Sesi</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>

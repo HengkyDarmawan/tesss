@@ -23,38 +23,25 @@
                     <!-- /.card-header -->
                     <!-- form start -->
                     <form action="" method="post">
-                    <input type="hidden" name="id" value="<?= $moderator['id_moderator']; ?>">
+                    <input type="hidden" name="id" value="<?php echo $webinar['id_webinar']?>">
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="name">Nama Moderator</label>
-                            <input type="text" class="form-control" id="name" name="nama_moderator" placeholder="input nama" value="<?php echo $moderator['nama_moderator'];?>">
-                            <?= form_error('nama_moderator', '<small class="text-danger pl-3">', '</small>'); ?>
+                            <label for="tema">Tema</label>
+                            <input type="text" class="form-control" id="tema" name="tema" placeholder="input tema" value="<?php echo $webinar['tema']?>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Nama</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="input name" value="<?php echo $user['name'];?>" readonly>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" class="form-control" id="email" name="email" placeholder="input email" value="<?php echo $moderator['email'];?>">
-                            <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
-                        </div>
-                        <div class="form-group">
-                            <label for="alamat">Alamat</label>
-                            <textarea class="form-control" name="alamat" id="alamat" cols="30" rows="3"><?php echo $moderator['alamat'];?></textarea>
-                            <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
-                        </div>
-                        <div class="form-group">
-                            <label for="hp">Hp</label>
-                            <input type="text" class="form-control" id="hp" name="hp" placeholder="input hp" value="<?php echo $moderator['hp'];?>">
-                            <?= form_error('hp', '<small class="text-danger pl-3">', '</small>'); ?>
-                        </div>
-                        <div class="form-group">
-                            <label for="pekerjaan">Pekerjaan</label>
-                            <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" placeholder="input pekerjaan" value="<?php echo $moderator['pekerjaan'];?>">
-                            <?= form_error('pekerjaan', '<small class="text-danger pl-3">', '</small>'); ?>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="input email" value="<?php echo $user['email'];?>" readonly>
                         </div>
                     </div>
                     <!-- /.card-body -->
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-success">Update</button>
+                        <button type="submit" name="daftar" class="btn btn-success">Daftar</button>
                     </div>
                     </form>
                 </div>

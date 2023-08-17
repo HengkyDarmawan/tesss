@@ -35,7 +35,6 @@ class Webinar extends CI_Controller {
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">webinar di Tambahkan !!!</div>');
             redirect('index.php/webinar');
         }
-
     }
     public function hapus($id)
     {

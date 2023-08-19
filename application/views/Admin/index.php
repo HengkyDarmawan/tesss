@@ -34,7 +34,7 @@
                   <tr>
                     <th>No.</th>
                     <th>Nama Webinar</th>
-                    <th>Nama Perserta</th>
+                    <th>Nama Peserta</th>
                     <th>Waktu Daftar</th>
                     <th>Status</th>
                     <th>Action</th>
@@ -71,7 +71,7 @@
                   <tr>
                     <th>No.</th>
                     <th>Nama Webinar</th>
-                    <th>Nama Perserta</th>
+                    <th>Nama Peserta</th>
                     <th>Waktu Daftar</th>
                     <th>Status</th>
                     <th>Action</th>

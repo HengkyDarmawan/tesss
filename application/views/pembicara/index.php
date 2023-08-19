@@ -35,9 +35,9 @@
                   <tr>
                     <th>No.</th>
                     <th>Nama</th>
-                    <th>Pekerjaan</th>
+                    <th>Profesi</th>
                     <th>Email</th>
-                    <th>Hp</th>
+                    <th>Nomor Telepon</th>
                     <th>Link Materi</th>
                     <th>Alamat</th>
                     <th>Action</th>
@@ -52,7 +52,9 @@
                             <td><?= $pembicara['pekerjaan']; ?></td>
                             <td><?= $pembicara['email']; ?></td>
                             <td><?= $pembicara['hp']; ?></td>
-                            <td><?= $pembicara['link']; ?></td>
+                            <td>
+                                <a href="<?= $pembicara['link']; ?>" class="btn btn-outline-primary btn-sm" target="_blank">Link</a>
+                            </td>
                             <td><?= $pembicara['alamat']; ?></td>
                             <td>
                             <a href="<?= base_url(); ?>index.php/pembicara/update/<?= $pembicara['id_pembicara']; ?>" class="btn btn-block btn-outline-success btn-sm">Update</a>
@@ -65,9 +67,9 @@
                   <tr>
                     <th>No.</th>
                     <th>Nama</th>
-                    <th>Pekerjaan</th>
+                    <th>Profesi</th>
                     <th>Email</th>
-                    <th>Hp</th>
+                    <th>Nomor Telepon</th>
                     <th>Link Materi</th>
                     <th>Alamat</th>
                     <th>Action</th>

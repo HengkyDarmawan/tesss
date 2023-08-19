@@ -29,16 +29,6 @@ class Admin extends CI_Controller {
 		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">webinar Di tolak !!!</div>');
 		redirect('index.php/admin');
 	}
-	public function Profile()
-	{
-		$data['title'] = 'Profile admin';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
-        $this->load->view('admin/header', $data);
-        $this->load->view('admin/profile', $data);
-        $this->load->view('admin/footer');
-	}
-	
     public function update()
 	{
 		$data['title'] = 'Update Profile';

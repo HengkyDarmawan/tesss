@@ -14,7 +14,7 @@ class Panmoderator extends CI_Controller {
         $this->load->view('panitia/footer');
 	}
     public function Tambah(){
-        $data['title'] = 'Tambah moderator Panitia';
+        $data['title'] = 'Tambah moderator';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->form_validation->set_rules('nama_moderator', 'Nama moderator', 'required|trim');

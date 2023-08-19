@@ -14,7 +14,7 @@ class Panpembicara extends CI_Controller {
         $this->load->view('panitia/footer');
 	}
     public function Tambah(){
-        $data['title'] = 'Tambah Pembicara panitia';
+        $data['title'] = 'Tambah Pembicara';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->form_validation->set_rules('nama_pembicara', 'Nama Pembicara', 'required|trim');

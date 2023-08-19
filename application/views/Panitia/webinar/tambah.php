@@ -53,6 +53,7 @@
                                 <option value="">- Pilih tipe-</option>
                                 <option value="webinar">Webinar</option>
                                 <option value="seminar">Seminar</option>
+                                <option value="hybrid">Hybrid</option>
                             </select>
                         </div>
                         <div class="form-group">

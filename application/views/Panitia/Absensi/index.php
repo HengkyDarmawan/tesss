@@ -34,9 +34,9 @@
                   <tr>
                     <th>No.</th>
                     <th>Nama Webinar</th>
-                    <th>Nama Perserta</th>
+                    <th>Nama Peserta</th>
                     <th>Waktu Absen</th>
-                    <th>Bukti Absensi</th>
+                    <th>Link Bukti Absensi</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
@@ -49,7 +49,9 @@
                             <td><?= $absensi['tema']; ?></td>
                             <td><?= $absensi['name']; ?></td>
                             <td><?= $absensi['waktu_absen']; ?></td>
-                            <td><?= $absensi['bukti']; ?></td>
+                            <td>
+                                <a href="<?= $absensi['bukti']; ?>" class="btn btn-outline-primary btn-sm" target="_blank">Link</a>
+                            </td>
                             <td>
                                 <?php
                                 if ($absensi['status'] == "review") { ?>
@@ -64,8 +66,10 @@
                                 <?php if($absensi['status'] == 'review') { ?>
                                     <a href="<?= base_url(); ?>index.php/panabsensi/approved/<?= $absensi['id_absensi']; ?>" class="btn btn-outline-success btn-sm" onclick="return confirm('yakin?');">Approved</a>
                                     <a href="<?= base_url(); ?>index.php/panabsensi/rejected/<?= $absensi['id_absensi']; ?>" class="btn btn-outline-danger btn-sm" onclick="return confirm('yakin?');">Rejected</a>
-                                <?php } ?>
-                                <a href="<?= base_url(); ?>index.php/panabsensi/sertifikat/<?= $absensi['id_absensi']; ?>" class="btn btn-outline-success btn-sm">Sertifikat</a>
+                                <?php } ?>  
+                              <?php if($absensi['status'] == 'approved'):?>
+                                <a href="<?php echo base_url()?>index.php/panabsensi/generator/<?= $absensi['id_absensi']; ?>" class="btn btn-outline-primary btn-sm" type="button">Sertifikat</a>
+                              <?php endif;?>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -74,9 +78,9 @@
                   <tr>
                     <th>No.</th>
                     <th>Nama Webinar</th>
-                    <th>Nama Perserta</th>
+                    <th>Nama Peserta</th>
                     <th>Waktu Absen</th>
-                    <th>Bukti Absensi</th>
+                    <th>Link Bukti Absensi</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>

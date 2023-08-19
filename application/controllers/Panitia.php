@@ -29,15 +29,6 @@ class Panitia extends CI_Controller {
 		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">webinar Di tolak !!!</div>');
 		redirect('index.php/panitia');
 	}
-	public function Profile()
-	{
-		$data['title'] = 'Profile panitia';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
-        $this->load->view('panitia/header', $data);
-        $this->load->view('panitia/profile', $data);
-        $this->load->view('panitia/footer');
-	}
 	
     public function update()
 	{

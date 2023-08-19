@@ -40,7 +40,7 @@
                                 <h5 class="card-title text-bold mb-3">Nama : <?php echo $user['name']?></h5>
                                 <p class="card-text">Email : <?php echo $user['email']?></p>
                                 <p class="card-text">Alamat : <?php echo $user['alamat']?></p>
-                                <p class="card-text">Nomor Telpon : <?php echo $user['hp']?></p>
+                                <p class="card-text">Nomor Telepon : <?php echo $user['hp']?></p>
                                 <p class="card-text">Profesi: <?php echo $user['pekerjaan']?></p>
                                 <p class="card-text"><small class="text-muted">Member Since <?php echo date ('d F Y', $user['date_created']); ?></small></p>
                             </div>

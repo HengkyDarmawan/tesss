@@ -29,6 +29,16 @@
 <script src="<?php echo base_url('assets/');?>plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url('assets/');?>dist/js/adminlte.min.js"></script>
+<!-- active menu -->
+<script>
+  const activePage = window.location;
+  const navLinks = document.querySelectorAll('.nav-link').
+  forEach(link =>{
+    if(link.href.includes(`${activePage}`)){
+      link.classList.add('active');
+    }
+  })
+</script>
 <script>
   $('.custom-file-input').on('change', function(){
     let fileName = $(this).val().split('\\').pop();

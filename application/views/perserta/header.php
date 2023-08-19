@@ -24,14 +24,14 @@
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        <a class="nav-link" data-widget="pushmenu" href="" role="button"><i class="fas fa-bars"></i></a>
       </li>
     </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+        <a class="nav-link" data-widget="fullscreen" href="" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
@@ -54,7 +54,7 @@
           <img src="<?php echo base_url('assets/img/') . $user['image'];?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block"><?php echo $user['name']?></a>
+          <a href="<?php echo base_url();?>index.php/perserta" class="d-block"><?php echo $user['name']?></a>
         </div>
       </div>
 
@@ -65,20 +65,20 @@
                with font-awesome or any other icon font library -->
           <li class="nav-header">MENU</li>
           <li class="nav-item">
-            <a href="<?php echo base_url();?>index.php/perserta" class="nav-link active">
+            <a href="<?php echo base_url();?>index.php/perserta" class="nav-link">
               <i class="nav-icon fas fa-fw fa-tachometer-alt"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?php echo base_url();?>index.php/perwebinar/index" class="nav-link">
+            <a href="<?php echo base_url();?>index.php/perwebinar" class="nav-link">
               <i class="nav-icon fas fa-fw fa-chalkboard-teacher"></i>
               <p>Seminar / Webinar</p>
             </a>
           </li>
           <li class="nav-header">SETTING</li>
           <li class="nav-item">
-            <a href="<?php echo base_url();?>index.php/perserta/profile" class="nav-link">
+            <a href="<?php echo base_url();?>index.php/perprofile" class="nav-link">
               <i class="nav-icon fas fa-fw fa-user-cog"></i>
               <p>Profile</p>
             </a>

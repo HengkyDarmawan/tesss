@@ -5,7 +5,7 @@ class Webinar extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = 'webinar';
+		$data['title'] = 'Webinar / Seminar';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['webinar'] = $this->webinar_m->getWebinar();
 
@@ -14,7 +14,7 @@ class Webinar extends CI_Controller {
         $this->load->view('Admin/footer');
 	}
     public function Tambah(){
-        $data['title'] = 'Tambah webinar';
+        $data['title'] = 'Tambah Webinar / Seminar';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['pembicara'] = $this->db->get('pembicara')->result_array();
         $data['moderator'] = $this->db->get('moderator')->result_array();
@@ -44,7 +44,7 @@ class Webinar extends CI_Controller {
     }
     public function update($id)
     {
-        $data['title'] = "Update webinar";
+        $data['title'] = "Update Webinar / Seminar";
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['webinar'] = $this->webinar_m->getWebinarId($id);
         $data['pembicara'] = $this->db->get('pembicara')->result_array();

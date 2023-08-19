@@ -27,7 +27,7 @@
                   <tr>
                     <th>No.</th>
                     <th>Tema</th>
-                    <th>Perserta</th>
+                    <th>Pembicara</th>
                     <th>Tanggal</th>
                     <th>Waktu</th>
                     <th>Lokasi</th>
@@ -42,7 +42,7 @@
                         <tr>
                             <td><?= $i++; ?></td>
                             <td><?= $dafwebinar['tema']; ?></td>
-                            <td><?= $dafwebinar['name']; ?></td>
+                            <td><?= $dafwebinar['nama_pembicara']; ?></td>
                             <td><?= $dafwebinar['tanggal']; ?></td>
                             <td><?= $dafwebinar['waktu']; ?></td>
                             <td><?= $dafwebinar['lokasi']; ?></td>
@@ -69,7 +69,7 @@
                   <tr>
                     <th>No.</th>
                     <th>Tema</th>
-                    <th>Perserta</th>
+                    <th>Pembicara</th>
                     <th>Tanggal</th>
                     <th>Waktu</th>
                     <th>Lokasi</th>
@@ -108,7 +108,7 @@
                   <tr>
                     <th>No.</th>
                     <th>Tema</th>
-                    <th>Perserta</th>
+                    <th>peserta</th>
                     <th>Waktu Absen</th>
                     <th>Link Bukti Absensi</th>
                     <th>Status</th>
@@ -138,7 +138,7 @@
                             </td>
                             <td>
                             <?php if($absen['status'] == 'approved'):?>
-                              <button class="btn btn-block btn-outline-success btn-sm" type="button">Cetak</button>
+                              <a href="<?php echo base_url()?>index.php/perserta/generator/<?= $absen['id_absensi']; ?>" class="btn btn-block btn-outline-primary btn-sm" type="button">Cetak</a>
                             <?php endif;?>
                             </td>
                         </tr>
@@ -148,7 +148,7 @@
                   <tr>
                     <th>No.</th>
                     <th>Tema</th>
-                    <th>Perserta</th>
+                    <th>peserta</th>
                     <th>Waktu Absen</th>
                     <th>Link Bukti Absensi</th>
                     <th>Status</th>

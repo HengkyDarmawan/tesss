@@ -37,8 +37,8 @@
                     <th>Nama</th>
                     <th>Email</th>
                     <th>Alamat</th>
-                    <th>Hp</th>
-                    <th>pekerjaan</th>
+                    <th>Nomor Telpon</th>
+                    <th>Profesi</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -65,8 +65,8 @@
                     <th>Nama</th>
                     <th>Email</th>
                     <th>Alamat</th>
-                    <th>Hp</th>
-                    <th>pekerjaan</th>
+                    <th>Nomor Telpon</th>
+                    <th>Profesi</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>

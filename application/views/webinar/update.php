@@ -57,11 +57,18 @@
                                     <option value="">- Pilih tipe-</option>
                                     <option value="webinar" selected>Webinar</option>
                                     <option value="seminar">Seminar</option>
-                                <?php } else { ?>
+                                    <option value="hybrid">Hybrid</option>
+                                <?php } else if($webinar['tipe'] == "seminar"){ ?>
                                     <option value="">- Pilih tipe-</option>
                                     <option value="webinar">Webinar</option>
                                     <option value="seminar" selected>Seminar</option>
-                                <?php } ?>
+                                    <option value="hybrid">Hybrid</option>
+                                <?php } else{ ?>
+                                    <option value="">- Pilih tipe-</option>
+                                    <option value="webinar">Webinar</option>
+                                    <option value="seminar">Seminar</option>
+                                    <option value="hybrid" selected>Hybrid</option>
+                                <?php }?>
                             </select>
                         </div>
                         <div class="form-group">

@@ -33,6 +33,7 @@
                     <th>Waktu</th>
                     <th>Lokasi</th>
                     <th>Moderator</th>
+                    <th>Materi</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -49,8 +50,15 @@
                             <td><?= $webinar['lokasi']; ?></td>
                             <td><?= $webinar['nama_moderator']; ?></td>
                             <td>
+                                <a href="<?= $webinar['link']; ?>" class="btn btn-outline-primary btn-sm" target="_blank">Link</a>
+                            </td>
+                            <td>
+                            <?php if($webinar['tanggal'] >= date('Y-m-d')){?>
                             <a href="<?php echo base_url()?>index.php/perwebinar/daftar/<?= $webinar['id_webinar']; ?>" class="btn btn-outline-primary btn-sm">Daftar</a>
                             </td>
+                            <?php } else {?>
+                              <span class="badge badge-pill badge-success">Selesai</span>
+                            <?php }?>
                         </tr>
                     <?php endforeach; ?>
                   </tbody>
@@ -64,6 +72,7 @@
                     <th>Waktu</th>
                     <th>Lokasi</th>
                     <th>Moderator</th>
+                    <th>Materi</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>

@@ -41,7 +41,7 @@
                                 <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="form-group">
-                                <label for="hp">Nomor Telpon</label>
+                                <label for="hp">Nomor Telepon</label>
                                 <input type="text" class="form-control" id="hp" name="hp" placeholder="input hp" value="<?php echo $user['hp'];?>">
                                 <?= form_error('hp', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>

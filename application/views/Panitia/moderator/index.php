@@ -35,9 +35,9 @@
                   <tr>
                     <th>No.</th>
                     <th>Nama Moderator</th>
-                    <th>Pekerjaan</th>
+                    <th>Profesi</th>
                     <th>Email</th>
-                    <th>Hp</th>
+                    <th>Nomor Telepon</th>
                     <th>Alamat</th>
                     <th>Action</th>
                   </tr>
@@ -63,9 +63,9 @@
                   <tr>
                     <th>No.</th>
                     <th>Nama Moderator</th>
-                    <th>Pekerjaan</th>
+                    <th>Profesi</th>
                     <th>Email</th>
-                    <th>Hp</th>
+                    <th>Nomor Telepon</th>
                     <th>Alamat</th>
                     <th>Action</th>
                   </tr>

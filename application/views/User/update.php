@@ -41,13 +41,13 @@
                             <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="form-group">
-                            <label for="hp">Hp</label>
-                            <input type="text" class="form-control" id="hp" name="hp" placeholder="input hp" value="<?php echo $useri['hp'];?>">
+                            <label for="hp">Nomor Telepon</label>
+                            <input type="text" class="form-control" id="hp" name="hp" placeholder="input Nomor Telepon" value="<?php echo $useri['hp'];?>">
                             <?= form_error('hp', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="form-group">
-                            <label for="pekerjaan">Pekerjaan</label>
-                            <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" placeholder="input pekerjaan" value="<?php echo $useri['pekerjaan'];?>">
+                            <label for="pekerjaan">Profesi</label>
+                            <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" placeholder="input Profesi" value="<?php echo $useri['pekerjaan'];?>">
                             <?= form_error('pekerjaan', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="form-group">

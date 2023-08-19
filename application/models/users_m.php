@@ -19,7 +19,7 @@ class Users_m extends CI_Model
             "hp" => $this->input->post('hp', true),
             "pekerjaan" => $this->input->post('pekerjaan', true),
             "image" => "default.jpg",
-            'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
+            'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
 			"role_id" => $this->input->post('role_id', true),
             "is_active" => 1,
             'date_created' => time(),

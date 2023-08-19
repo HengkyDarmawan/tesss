@@ -71,6 +71,11 @@
                             <input type="text" class="form-control" id="waktu" name="waktu" placeholder="input waktu">
                             <?= form_error('waktu', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
+                        <div class="form-group">
+                            <label for="jmlh_tiket">Slot</label>
+                            <input type="text" class="form-control" id="jmlh_tiket" name="jmlh_tiket" placeholder="input jumlah tiket yang tersedia">
+                            <?= form_error('jmlh_tiket', '<small class="text-danger pl-3">', '</small>'); ?>
+                        </div>
                     </div>
                     <!-- /.card-body -->
 

@@ -32,7 +32,7 @@ class Auth extends CI_Controller {
 					if($user['role_id'] == 1){
 						redirect('index.php/admin');
 					}elseif ($user['role_id'] == 2) {
-						redirect('index.php/Panitia');
+						redirect('index.php/panitia');
 					}elseif ($user['role_id'] == 3) {
 						redirect('index.php/perserta');
 					}else{

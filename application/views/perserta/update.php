@@ -22,7 +22,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <?= form_open_multipart('index.php/perserta/update');?>
+                    <?= form_open_multipart('index.php/perprofile/update');?>
                         <input type="hidden" name="id" value="<?php echo $user['id'];?>">
                         <div class="card-body">
                             <div class="form-group">

@@ -26,6 +26,7 @@ class Panwebinar extends CI_Controller {
 		$this->form_validation->set_rules('lokasi', 'Lokasi', 'required|trim');
 		$this->form_validation->set_rules('tanggal', 'Tanggal', 'required|trim');
 		$this->form_validation->set_rules('waktu', 'Waktu', 'required|trim');
+		$this->form_validation->set_rules('jmlh_tiket', 'Slot', 'required|trim|numeric');
         if ($this->form_validation->run() == false) {
             $this->load->view('panitia/header', $data);
             $this->load->view('panitia/webinar/tambah', $data);
@@ -33,7 +34,7 @@ class Panwebinar extends CI_Controller {
         } else {
             $this->webinar_m->tambah();
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">webinar di Tambahkan !!!</div>');
-            redirect('index.php/webinar');
+            redirect('index.php/panwebinar');
         }
 
     }
@@ -41,7 +42,7 @@ class Panwebinar extends CI_Controller {
     {
         $this->webinar_m->hapus($id);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">webinar di Delete !!!</div>');
-        redirect('index.php/webinar');
+        redirect('index.php/panwebinar');
     }
     public function update($id)
     {
@@ -58,6 +59,7 @@ class Panwebinar extends CI_Controller {
 		$this->form_validation->set_rules('lokasi', 'lokasi', 'required|trim');
 		$this->form_validation->set_rules('tanggal', 'Tanggal', 'required|trim');
 		$this->form_validation->set_rules('waktu', 'Waktu', 'required|trim');
+		$this->form_validation->set_rules('jmlh_tiket', 'Slot', 'required|trim|numeric');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('panitia/header', $data);
@@ -66,7 +68,7 @@ class Panwebinar extends CI_Controller {
         } else {
             $this->webinar_m->update();
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">webinar Di Update !!!</div>');
-            redirect('index.php/webinar');
+            redirect('index.php/panwebinar');
         }
     }
 }

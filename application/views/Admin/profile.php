@@ -24,7 +24,7 @@
                     <h3 class="card-title">My Profile</h3>
                   </div>
                   <div class="col-4 text-right">
-                    <a href="<?php echo base_url()?>index.php/admin/update" class="btn btn-outline-primary btn-sm">Update</a>
+                    <a href="<?php echo base_url()?>index.php/profile/update" class="btn btn-outline-primary btn-sm">Update</a>
                   </div>
                 </div>
               </div>

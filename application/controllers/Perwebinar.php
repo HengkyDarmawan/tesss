@@ -8,8 +8,6 @@ class Perwebinar extends CI_Controller {
 		$data['title'] = 'Webinar / Seminar';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['webinar'] = $this->webinar_m->getWebinar();
-        // $current_date = date('Y-m-d');
-        // var_dump($current_date);die;
 
         $this->load->view('perserta/header', $data);
         $this->load->view('perserta/webinar/index', $data, );

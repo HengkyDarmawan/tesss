@@ -40,6 +40,7 @@
                     <th>Waktu</th>
                     <th>Lokasi</th>
                     <th>Moderator</th>
+                    <th>Slot</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -54,6 +55,7 @@
                             <td><?= $webinar['tanggal']; ?> <br>(<?= $webinar['waktu']?>)</td>
                             <td><?= $webinar['lokasi']; ?></td>
                             <td><?= $webinar['nama_moderator']; ?></td>
+                            <td><?= $webinar['jmlh_tiket']; ?></td>
                             <td>
                             <a href="<?= base_url(); ?>index.php/webinar/update/<?= $webinar['id_webinar']; ?>" class="btn btn-block btn-outline-success btn-sm">Update</a>
                               <a href="<?= base_url(); ?>index.php/webinar/hapus/<?= $webinar['id_webinar']; ?>" class="btn btn-block btn-outline-danger btn-sm" onclick="return confirm('yakin?');">Delete</a>
@@ -70,6 +72,7 @@
                     <th>Waktu</th>
                     <th>Lokasi</th>
                     <th>Moderator</th>
+                    <th>Slot</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>

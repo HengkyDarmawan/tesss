@@ -20,6 +20,7 @@ class Webinar_m extends CI_Model
             "waktu" => $this->input->post('waktu', true),
             "pembicara_id" => $this->input->post('pembicara_id', true),
             "moderator_id" => $this->input->post('moderator_id', true),
+            "jmlh_tiket" => $this->input->post('jmlh_tiket', true),
         ];
         $this->db->insert('webinar', $data);
     }
@@ -43,6 +44,7 @@ class Webinar_m extends CI_Model
             "waktu" => $this->input->post('waktu', true),
             "pembicara_id" => $this->input->post('pembicara_id', true),
             "moderator_id" => $this->input->post('moderator_id', true),
+            "jmlh_tiket" => $this->input->post('jmlh_tiket', true),
         ];
         $this->db->where('id_webinar', $this->input->post('id'));
         $this->db->update('webinar', $data);

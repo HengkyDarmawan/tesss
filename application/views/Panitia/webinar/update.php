@@ -82,9 +82,14 @@
                             <?= form_error('tanggal', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="form-group">
-                            <label for="waktu">waktu</label>
+                            <label for="jmlh_tiket">waktu</label>
                             <input type="text" class="form-control" id="waktu" name="waktu" placeholder="input waktu" value="<?php echo $webinar['waktu'];?>">
                             <?= form_error('waktu', '<small class="text-danger pl-3">', '</small>'); ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="jmlh_tiket">Slot</label>
+                            <input type="text" class="form-control" id="jmlh_tiket" name="jmlh_tiket" placeholder="input jumlah tiket yang tersedia" value="<?php echo $webinar['jmlh_tiket'];?>">
+                            <?= form_error('jmlh_tiket', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                     </div>
                     <!-- /.card-body -->

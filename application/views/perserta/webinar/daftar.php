@@ -37,6 +37,10 @@
                             <label for="email">Email</label>
                             <input type="text" class="form-control" id="email" name="email" placeholder="input email" value="<?php echo $user['email'];?>" readonly>
                         </div>
+                        <div class="form-group">
+                            <label for="bukti">Link Bukti Pembayaran (jika gratis tulis gratis)</label>
+                            <input type="text" class="form-control" id="bukti" name="link_pembayaran" placeholder="input Bukti pembayaran">
+                        </div>
                     </div>
                     <!-- /.card-body -->
 

@@ -54,6 +54,8 @@
                                     <span class="badge badge-pill badge-warning "><?= $dafwebinar['status']; ?></span>
                                 <?php } else if ($dafwebinar['status'] == "terdaftar") { ?>
                                     <span class="badge badge-pill badge-success "><?= $dafwebinar['status']; ?></span>
+                                <?php } else if ($dafwebinar['status'] == "selesai") { ?>
+                                    <span class="badge badge-pill badge-primary "><?= $dafwebinar['status']; ?></span>
                                 <?php } else { ?>
                                     <span class="badge badge-pill badge-danger "><?= $dafwebinar['status']; ?></span>
                                 <?php } ?>

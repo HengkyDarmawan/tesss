@@ -5,12 +5,13 @@ class Perserta extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = 'Dashboard';
+        $data['title'] = 'Dashboard';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $user = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $user_id = $user['id'];
         $data['daftar_webinar'] = $this->perserta_m->getDaftarWebinar($user_id);
         $data['absensi'] = $this->perserta_m->getAbsensi($user_id);
+        
 
         $this->load->view('perserta/header', $data);
         $this->load->view('perserta/index', $data);
@@ -43,6 +44,11 @@ class Perserta extends CI_Controller {
             $this->db->set('bukti', $bukti);
             $this->db->set('status', 'review');
             $this->db->insert('absensi');
+
+            // Set status absen di tabel daftar_webinar menjadi 'absen' untuk id yang sesuai
+            $this->db->set('status', 'selesai');
+            $this->db->where('id_daftar_webinar', $id_daftar_webinar);
+            $this->db->update('daftar_webinar');
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Anda telah terabsen di Webinar ini.</div>');
             redirect('index.php/perserta');
         }
@@ -125,7 +131,6 @@ class Perserta extends CI_Controller {
  
         //membuat image sertifikat yang sudah ada text namanya dengan format png dan simpan sesuai dengan value variabel output
         imagepng($createimage,$output,3);
-        imagepng($createimage,$tema,3);
  
         //memanggil fungsi untuk proses download sertifikat
         $this->download_file($output, $tema);

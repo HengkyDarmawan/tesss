@@ -43,7 +43,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?php echo base_url();?>index.php/panitia" class="brand-link">
-      <span class="brand-text font-weight-light">Undira Webinar</span>
+      <span class="brand-text font-weight-light">Universitas XYZ</span>
     </a>
 
     <!-- Sidebar -->

@@ -44,4 +44,21 @@ class Perserta_m extends CI_Model
         $this->db->where('absensi.id_absensi', $id);
         return $this->db->get()->row_array();
     }
+    //coba get jumlah tiket
+    public function getJumlahTiket($id){
+        $this->db->select('jmlh_tiket');
+        $this->db->where('id_webinar', $id);
+        $query = $this->db->get('webinar');
+
+        if($query->num_rows() > 0){
+            return $query->row()->jmlh_tiket;
+        }
+        return 0;
+    }
+    public function getJumlahPendaftar($id){
+        $this->db->where('webinar_id', $id);
+        $query = $this->db->get('daftar_webinar');
+
+        return $query->num_rows();
+    }
 }

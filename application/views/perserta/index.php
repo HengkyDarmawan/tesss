@@ -14,6 +14,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+      <?= $this->session->flashdata('message'); ?>
         <div class="row">
           <div class="col-12">
             <div class="card">
@@ -32,6 +33,7 @@
                     <th>Waktu</th>
                     <th>Lokasi</th>
                     <th>Waktu Daftar</th>
+                    <th>Bukti Pembayaran</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
@@ -48,19 +50,30 @@
                             <td><?= $dafwebinar['lokasi']; ?></td>
                             <td><?= $dafwebinar['waktu_daftar']; ?></td>
                             <td>
+                              <?php if($dafwebinar['link_pembayaran'] == 'gratis') {?>
+                                <span class="badge badge-pill badge-primary ">gratis</span>
+                              <?php } else { ?>
+                                <a href="<?= $dafwebinar['link_pembayaran']; ?>" class="btn btn-outline-primary btn-sm" target="_blank">Link</a>
+                              <?php }?>
+                            </td>
+                            <td>
                                 <?php
                                 if ($dafwebinar['status'] == "review") { ?>
                                     <span class="badge badge-pill badge-warning "><?= $dafwebinar['status']; ?></span>
                                 <?php } else if ($dafwebinar['status'] == "terdaftar") { ?>
                                     <span class="badge badge-pill badge-success "><?= $dafwebinar['status']; ?></span>
+                                <?php } else if ($dafwebinar['status'] == "selesai") { ?>
+                                    <span class="badge badge-pill badge-primary "><?= $dafwebinar['status']; ?></span>
                                 <?php } else { ?>
                                     <span class="badge badge-pill badge-danger "><?= $dafwebinar['status']; ?></span>
                                 <?php } ?>
                             </td>
                             <td>
-                              <?php if($dafwebinar['status'] == 'terdaftar'):?>
+                              <?php if($dafwebinar['status'] == 'terdaftar') {?>
                                 <a href="<?php echo base_url()?>index.php/perserta/absensi/<?= $dafwebinar['id_daftar_webinar']; ?>" class="btn btn-block btn-outline-primary btn-sm" type="button">Absen</a>
-                              <?php endif;?>
+                              <?php } elseif($dafwebinar['status'] == 'selesai'){?>
+                                
+                              <?php }?>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -74,6 +87,7 @@
                     <th>Waktu</th>
                     <th>Lokasi</th>
                     <th>Waktu Daftar</th>
+                    <th>Bukti Pembayaran</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>

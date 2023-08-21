@@ -36,6 +36,7 @@
                     <th>Nama Webinar</th>
                     <th>Nama Peserta</th>
                     <th>Waktu Daftar</th>
+                    <th>Bukti Pembayaran</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
@@ -49,11 +50,20 @@
                             <td><?= $dafwebinar['name']; ?></td>
                             <td><?= $dafwebinar['waktu_daftar']; ?></td>
                             <td>
+                              <?php if($dafwebinar['link_pembayaran'] == 'gratis'){?>
+                                <span class="badge badge-pill badge-primary ">gratis</span>
+                              <?php } else {?>
+                                <a href="<?= $dafwebinar['link_pembayaran']; ?>" class="btn btn-outline-primary btn-sm" target="_blank">Link</a>
+                              <?php }?>
+                            </td>
+                            <td>
                                 <?php
                                 if ($dafwebinar['status'] == "review") { ?>
                                     <span class="badge badge-pill badge-warning "><?= $dafwebinar['status']; ?></span>
                                 <?php } else if ($dafwebinar['status'] == "terdaftar") { ?>
                                     <span class="badge badge-pill badge-success "><?= $dafwebinar['status']; ?></span>
+                                <?php } else if ($dafwebinar['status'] == "selesai") { ?>
+                                    <span class="badge badge-pill badge-primary "><?= $dafwebinar['status']; ?></span>
                                 <?php } else { ?>
                                     <span class="badge badge-pill badge-danger "><?= $dafwebinar['status']; ?></span>
                                 <?php } ?>
@@ -73,6 +83,7 @@
                     <th>Nama Webinar</th>
                     <th>Nama Peserta</th>
                     <th>Waktu Daftar</th>
+                    <th>Bukti Pembayaran</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>

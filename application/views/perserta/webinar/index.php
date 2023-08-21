@@ -14,6 +14,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+      <?= $this->session->flashdata('message'); ?>
         <div class="row">
           <div class="col-12">
             <div class="card">
@@ -30,9 +31,10 @@
                     <th>Pembicara</th>
                     <th>Tipe</th>
                     <th>Tanggal</th>
-                    <th>Waktu</th>
                     <th>Lokasi</th>
                     <th>Moderator</th>
+                    <th>Bank</th>
+                    <th>Harga</th>
                     <th>Materi</th>
                     <th>Action</th>
                   </tr>
@@ -45,10 +47,23 @@
                             <td><?= $webinar['tema']; ?></td>
                             <td><?= $webinar['nama_pembicara']; ?></td>
                             <td><?= $webinar['tipe']; ?></td>
-                            <td><?= $webinar['tanggal']; ?></td>
-                            <td><?= $webinar['waktu']; ?></td>
+                            <td><?= $webinar['tanggal']; ?><br>(<?= $webinar['waktu']; ?>)</td>
                             <td><?= $webinar['lokasi']; ?></td>
                             <td><?= $webinar['nama_moderator']; ?></td>
+                            <td>
+                              <?php if($webinar['bank'] == 'gratis') {?>
+                                <span class="badge badge-pill badge-primary ">gratis</span>
+                              <?php } else { ?>
+                                <?= $webinar['bank']; ?><br>(<?= $webinar['no_rek']; ?>)
+                              <?php }?>
+                            </td>
+                            <td>
+                              <?php if(!$webinar['harga'] == 'null') {?>
+                                <span class="badge badge-pill badge-primary ">gratis</span>
+                              <?php } else { ?>
+                                Rp.<?= number_format($webinar['harga'],0,',','.');?>
+                              <?php }?>
+                            </td>
                             <td>
                                 <a href="<?= $webinar['link']; ?>" class="btn btn-outline-primary btn-sm" target="_blank">Link</a>
                             </td>
@@ -69,9 +84,10 @@
                     <th>Pembicara</th>
                     <th>Tipe</th>
                     <th>Tanggal</th>
-                    <th>Waktu</th>
                     <th>Lokasi</th>
                     <th>Moderator</th>
+                    <th>Bank</th>
+                    <th>Harga</th>
                     <th>Materi</th>
                     <th>Action</th>
                   </tr>

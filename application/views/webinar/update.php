@@ -86,6 +86,76 @@
                             <input type="text" class="form-control" id="waktu" name="waktu" placeholder="input waktu" value="<?php echo $webinar['waktu'];?>">
                             <?= form_error('waktu', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
+                        <div class="form-group">
+                            <label>Metode Pembayaran*</label>
+                            <select required name="bank" id="metode_pembayaran" class="form-control">
+                                <?php
+                                if ($webinar['bank'] == "gratis") { ?>
+                                    <option value="">- Pilih Pembayaran-</option>
+                                    <option value="gratis" selected>Gratis</option>
+                                    <option value="BCA">BCA</option>
+                                    <option value="BRI">BRI</option>
+                                    <option value="Mandiri">Mandiri</option>
+                                    <option value="BNI">BNI</option>
+                                    <option value="BTN">BTN</option>
+                                <?php } else if($webinar['bank'] == "BCA"){ ?>
+                                    <option value="">- Pilih Pembayaran-</option>
+                                    <option value="gratis">Gratis</option>
+                                    <option value="BCA" selected>BCA</option>
+                                    <option value="BRI">BRI</option>
+                                    <option value="Mandiri">Mandiri</option>
+                                    <option value="BNI">BNI</option>
+                                    <option value="BTN">BTN</option>
+                                <?php } else if($webinar['bank'] == "BRI"){ ?>
+                                    <option value="">- Pilih Pembayaran-</option>
+                                    <option value="gratis">Gratis</option>
+                                    <option value="BCA">BCA</option>
+                                    <option value="BRI" selected>BRI</option>
+                                    <option value="Mandiri">Mandiri</option>
+                                    <option value="BNI">BNI</option>
+                                    <option value="BTN">BTN</option>
+                                <?php } else if($webinar['bank'] == "Mandiri"){ ?>
+                                    <option value="">- Pilih Pembayaran-</option>
+                                    <option value="gratis">Gratis</option>
+                                    <option value="BCA">BCA</option>
+                                    <option value="BRI">BRI</option>
+                                    <option value="Mandiri" selected>Mandiri</option>
+                                    <option value="BNI">BNI</option>
+                                    <option value="BTN">BTN</option>
+                                <?php } else if($webinar['bank'] == "BNI"){ ?>
+                                    <option value="">- Pilih Pembayaran-</option>
+                                    <option value="gratis">Gratis</option>
+                                    <option value="BCA">BCA</option>
+                                    <option value="BRI">BRI</option>
+                                    <option value="Mandiri">Mandiri</option>
+                                    <option value="BNI" selected>BNI</option>
+                                    <option value="BTN">BTN</option>
+                                <?php } else { ?>
+                                    <option value="">- Pilih Pembayaran-</option>
+                                    <option value="gratis">Gratis</option>
+                                    <option value="BCA">BCA</option>
+                                    <option value="BRI">BRI</option>
+                                    <option value="Mandiri">Mandiri</option>
+                                    <option value="BNI">BNI</option>
+                                    <option value="BTN" selected>BTN</option>
+                                <?php }?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="no_rek">Nomor Rekening</label>
+                            <input type="text" class="form-control" id="no_rek" name="no_rek" placeholder="input nomor rekening" value="<?php echo $webinar['no_rek'];?>" <?php echo ($webinar['bank'] == 'gratis') ? 'disabled' : ''; ?>>
+                            <?= form_error('no_rek', '<small class="text-danger pl-3">', '</small>'); ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="harga">Harga</label>
+                            <input type="text" class="form-control" id="harga" name="harga" placeholder="input harga webinar" value="<?php echo $webinar['harga'];?>" <?php echo ($webinar['bank'] == 'gratis') ? 'disabled' : ''; ?>>
+                            <?= form_error('harga', '<small class="text-danger pl-3">', '</small>'); ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="jmlh_tiket">Kuota</label>
+                            <input type="text" class="form-control" id="jmlh_tiket" name="jmlh_tiket" placeholder="input jumlah tiket" value="<?php echo $webinar['jmlh_tiket'];?>">
+                            <?= form_error('jmlh_tiket', '<small class="text-danger pl-3">', '</small>'); ?>
+                        </div>
                     </div>
                     <!-- /.card-body -->
 
@@ -101,3 +171,20 @@
   </div>
   <!-- /.content-wrapper -->
 
+<script>
+    document.getElementById('metode_pembayaran').addEventListener('change', function() {
+        var noRekInput = document.getElementById('no_rek');
+        var hargaInput = document.getElementById('harga');
+        var selectedValue = this.value;
+
+        if (selectedValue === 'gratis') {
+            noRekInput.value = ''; // Reset nilai input nomor rekening
+            noRekInput.disabled = true;
+            hargaInput.value = ''; // Reset nilai input harga
+            hargaInput.disabled = true;
+        } else {
+            noRekInput.disabled = false;
+            hargaInput.disabled = false;
+        }
+    });
+</script>

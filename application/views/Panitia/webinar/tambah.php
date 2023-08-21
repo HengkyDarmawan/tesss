@@ -72,8 +72,30 @@
                             <?= form_error('waktu', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="form-group">
-                            <label for="jmlh_tiket">Slot</label>
-                            <input type="text" class="form-control" id="jmlh_tiket" name="jmlh_tiket" placeholder="input jumlah tiket yang tersedia">
+                            <label>Metode Pembayaran*</label>
+                            <select id="metode_pembayaran" name="bank" class="form-control">
+                                <option value="">- Pilih Pembayaran-</option>
+                                <option value="gratis">Gratis</option>
+                                <option value="BCA">BCA</option>
+                                <option value="BRI">BRI</option>
+                                <option value="Mandiri">Mandiri</option>
+                                <option value="BNI">BNI</option>
+                                <option value="BTN">BTN</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="no_rek">Nomor Rekening</label>
+                            <input type="text" class="form-control" id="no_rek" name="no_rek" placeholder="input nomor rekening">
+                            <?= form_error('no_rek', '<small class="text-danger pl-3">', '</small>'); ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="harga">Harga</label>
+                            <input type="text" class="form-control" id="harga" name="harga" placeholder="input harga webinar">
+                            <?= form_error('harga', '<small class="text-danger pl-3">', '</small>'); ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="jmlh_tiket">Kuota*</label>
+                            <input type="text" class="form-control" id="jmlh_tiket" name="jmlh_tiket" placeholder="input jumlah tiket">
                             <?= form_error('jmlh_tiket', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                     </div>
@@ -90,4 +112,20 @@
     </div>
   </div>
   <!-- /.content-wrapper -->
+  <script>
+    document.getElementById('metode_pembayaran').addEventListener('change', function() {
+        var noRekInput = document.getElementById('no_rek');
+        var hargaInput = document.getElementById('harga');
+        var selectedValue = this.value;
 
+        if (selectedValue === 'gratis') {
+            noRekInput.value = ''; // Reset nilai input nomor rekening
+            noRekInput.disabled = true;
+            hargaInput.value = ''; // Reset nilai input harga
+            hargaInput.disabled = true;
+        } else {
+            noRekInput.disabled = false;
+            hargaInput.disabled = false;
+        }
+    });
+</script>

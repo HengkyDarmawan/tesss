@@ -24,7 +24,7 @@
                         <h3 class="card-title"><?php echo $title?></h3>
                       </div>
                       <div class="col-4 text-right">
-                      <a href="<?php echo base_url()?>index.php/panwebinar/tambah" class="btn btn-outline-primary btn-sm">Tambah</a>
+                      <a href="<?php echo base_url()?>index.php/webinar/tambah" class="btn btn-outline-primary btn-sm">Tambah</a>
                       </div>
                   </div>
               </div>
@@ -33,7 +33,6 @@
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                   <tr>
-                    <th>No.</th>
                     <th>Tema</th>
                     <th>Pembicara</th>
                     <th>Tipe</th>
@@ -42,15 +41,11 @@
                     <th>Moderator</th>
                     <th>Bank</th>
                     <th>Harga</th>
-                    <th>Kuota</th>
-                    <th>Action</th>
+                    <th>Total Perserta</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <?php $i = 1; ?>
-                    <?php foreach ($webinar as $webinar) : ?>
                         <tr>
-                            <td><?= $i++; ?></td>
                             <td><?= $webinar['tema']; ?></td>
                             <td><?= $webinar['nama_pembicara']; ?></td>
                             <td><?= $webinar['tipe']; ?></td>
@@ -71,17 +66,11 @@
                                 Rp.<?= number_format($webinar['harga'],0,',','.');?>
                               <?php }?>
                             </td>
-                            <td><?= $webinar['jmlh_tiket']; ?></td>
-                            <td>
-                            <a href="<?= base_url(); ?>index.php/panwebinar/update/<?= $webinar['id_webinar']; ?>" class="btn btn-block btn-outline-success btn-sm">Update</a>
-                              <a href="<?= base_url(); ?>index.php/panwebinar/hapus/<?= $webinar['id_webinar']; ?>" class="btn btn-block btn-outline-danger btn-sm" onclick="return confirm('yakin?');">Delete</a>
-                            </td>
+                            <td><?= $total_perserta; ?></td>
                         </tr>
-                    <?php endforeach; ?>
                   </tbody>
                   <tfoot>
                   <tr>
-                    <th>No.</th>
                     <th>Tema</th>
                     <th>Pembicara</th>
                     <th>Tipe</th>
@@ -90,8 +79,7 @@
                     <th>Moderator</th>
                     <th>Bank</th>
                     <th>Harga</th>
-                    <th>Kuota</th>
-                    <th>Action</th>
+                    <th>Total Perserta</th>
                   </tr>
                   </tfoot>
                 </table>

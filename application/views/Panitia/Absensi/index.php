@@ -66,7 +66,7 @@
                                 <?php if($absensi['status'] == 'review') { ?>
                                     <a href="<?= base_url(); ?>index.php/panabsensi/approved/<?= $absensi['id_absensi']; ?>" class="btn btn-outline-success btn-sm" onclick="return confirm('yakin?');">Approved</a>
                                     <a href="<?= base_url(); ?>index.php/panabsensi/rejected/<?= $absensi['id_absensi']; ?>" class="btn btn-outline-danger btn-sm" onclick="return confirm('yakin?');">Rejected</a>
-                                <?php } ?>  
+                                <?php } ?>
                               <?php if($absensi['status'] == 'approved'):?>
                                 <a href="<?php echo base_url()?>index.php/panabsensi/generator/<?= $absensi['id_absensi']; ?>" class="btn btn-outline-primary btn-sm" type="button">Sertifikat</a>
                               <?php endif;?>

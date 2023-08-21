@@ -26,7 +26,10 @@ class Panwebinar extends CI_Controller {
 		$this->form_validation->set_rules('lokasi', 'Lokasi', 'required|trim');
 		$this->form_validation->set_rules('tanggal', 'Tanggal', 'required|trim');
 		$this->form_validation->set_rules('waktu', 'Waktu', 'required|trim');
-		$this->form_validation->set_rules('jmlh_tiket', 'Slot', 'required|trim|numeric');
+		$this->form_validation->set_rules('bank', 'Metode Pembayaran', 'required|trim');
+		$this->form_validation->set_rules('no_rek', 'Nomor Rekening', 'trim');
+		$this->form_validation->set_rules('harga', 'Harga', 'trim');
+		$this->form_validation->set_rules('jmlh_tiket', 'Kuota', 'required|trim|numeric');
         if ($this->form_validation->run() == false) {
             $this->load->view('panitia/header', $data);
             $this->load->view('panitia/webinar/tambah', $data);
@@ -59,7 +62,10 @@ class Panwebinar extends CI_Controller {
 		$this->form_validation->set_rules('lokasi', 'lokasi', 'required|trim');
 		$this->form_validation->set_rules('tanggal', 'Tanggal', 'required|trim');
 		$this->form_validation->set_rules('waktu', 'Waktu', 'required|trim');
-		$this->form_validation->set_rules('jmlh_tiket', 'Slot', 'required|trim|numeric');
+		$this->form_validation->set_rules('bank', 'Metode Pembayaran', 'required|trim');
+		$this->form_validation->set_rules('no_rek', 'Nomor Rekening', 'trim');
+		$this->form_validation->set_rules('harga', 'Harga', 'trim');
+		$this->form_validation->set_rules('jmlh_tiket', 'Kuota', 'required|trim|numeric');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('panitia/header', $data);

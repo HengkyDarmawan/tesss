@@ -40,7 +40,9 @@
                     <th>Waktu</th>
                     <th>Lokasi</th>
                     <th>Moderator</th>
-                    <th>Slot</th>
+                    <th>Bank</th>
+                    <th>Harga</th>
+                    <th>Kuota</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -55,10 +57,28 @@
                             <td><?= $webinar['tanggal']; ?> <br>(<?= $webinar['waktu']?>)</td>
                             <td><?= $webinar['lokasi']; ?></td>
                             <td><?= $webinar['nama_moderator']; ?></td>
+                            <td>
+                              <?php if($webinar['bank'] == 'gratis') {?>
+                                <span class="badge badge-pill badge-primary ">gratis</span>
+                              <?php } else { ?>
+                                <?= $webinar['bank']; ?><br>(<?= $webinar['no_rek']; ?>)
+                              <?php }?>
+                            </td>
+                            <td>
+                              <?php if(!$webinar['harga'] == 'null') {?>
+                                <span class="badge badge-pill badge-primary ">gratis</span>
+                              <?php } else { ?>
+                                Rp.<?= number_format($webinar['harga'],0,',','.');?>
+                              <?php }?>
+                            </td>
                             <td><?= $webinar['jmlh_tiket']; ?></td>
                             <td>
-                            <a href="<?= base_url(); ?>index.php/webinar/update/<?= $webinar['id_webinar']; ?>" class="btn btn-block btn-outline-success btn-sm">Update</a>
-                              <a href="<?= base_url(); ?>index.php/webinar/hapus/<?= $webinar['id_webinar']; ?>" class="btn btn-block btn-outline-danger btn-sm" onclick="return confirm('yakin?');">Delete</a>
+                              <?php if($webinar['tanggal'] >= date('Y-m-d')){?>
+                                <a href="<?= base_url(); ?>index.php/webinar/update/<?= $webinar['id_webinar']; ?>" class="btn btn-block btn-outline-success btn-sm">Update</a>
+                                <a href="<?= base_url(); ?>index.php/webinar/hapus/<?= $webinar['id_webinar']; ?>" class="btn btn-block btn-outline-danger btn-sm" onclick="return confirm('yakin?');">Delete</a>
+                              <?php }else {?>
+                                <a href="<?= base_url(); ?>index.php/webinar/laporan/<?= $webinar['id_webinar']; ?>" class="btn btn-block btn-outline-info btn-sm">Laporan</a>
+                              <?php }?>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -72,7 +92,9 @@
                     <th>Waktu</th>
                     <th>Lokasi</th>
                     <th>Moderator</th>
-                    <th>Slot</th>
+                    <th>Bank</th>
+                    <th>Harga</th>
+                    <th>Kuota</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>

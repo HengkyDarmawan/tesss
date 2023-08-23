@@ -77,4 +77,28 @@ class Panwebinar extends CI_Controller {
             redirect('index.php/panwebinar');
         }
     }
+    public function laporan($id)
+    {
+        $data['title'] = "Laporan Webinar";
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        //Ambil data webinar berdasarkan ID
+        $webinar = $this->webinar_m->getWebinarWithSpeakers($id);
+
+        // Periksa apakah tanggal webinar sudah lewat
+        if($webinar['tanggal'] < date('Y-m-d')){
+            // Ambil data peserta yang ikut webinar
+            $peserta = $this->webinar_m->getPesertaByWebinarId($id);
+
+            // Hitung total peserta
+            $total_peserta = count($peserta);
+            $data['webinar'] = $webinar;
+            $data['total_perserta'] = $total_peserta;
+            $this->load->view('Admin/header', $data);
+            $this->load->view('webinar/laporan', $data);
+            $this->load->view('Admin/footer');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-info" role="alert">Webinar belum berlangsung atau belum lewat tanggalnya.</div>');
+            redirect('index.php/webinar');
+        }
+    }
 }

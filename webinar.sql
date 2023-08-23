@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2023 at 07:38 AM
+-- Generation Time: Aug 23, 2023 at 01:16 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -42,8 +42,7 @@ CREATE TABLE `absensi` (
 --
 
 INSERT INTO `absensi` (`id_absensi`, `daftar_webinar_id`, `webinar_id`, `user_id`, `waktu_absen`, `bukti`, `status`) VALUES
-(11, 16, 6, 8, '2023-08-21 02:34:05', 'https://www.youtube.com/', 'approved'),
-(12, 24, 6, 18, '2023-08-21 06:24:38', 'https://globaltradecoconutindonesia.com/', 'approved');
+(13, 27, 7, 8, '2023-08-21 17:56:38', 'https://www.google.com/', 'approved');
 
 -- --------------------------------------------------------
 
@@ -66,12 +65,9 @@ CREATE TABLE `daftar_webinar` (
 --
 
 INSERT INTO `daftar_webinar` (`id_daftar_webinar`, `webinar_id`, `user_id`, `pembicara_id`, `waktu_daftar`, `link_pembayaran`, `status`) VALUES
-(16, 6, 8, 1, '2023-08-21 02:33:43', 'https://www.youtube.com/', 'selesai'),
-(17, 9, 8, 3, '2023-08-21 02:35:21', 'gratis', 'terdaftar'),
-(18, 10, 8, 3, '2023-08-21 02:41:56', 'gratis', 'terdaftar'),
-(22, 19, 8, 2, '2023-08-21 05:30:37', 'https://mail.google.com/', 'terdaftar'),
-(23, 7, 8, 3, '2023-08-21 05:31:43', 'gratis', 'terdaftar'),
-(24, 6, 18, 1, '2023-08-21 06:24:18', 'gratis', 'selesai');
+(25, 19, 8, 2, '2023-08-21 17:46:05', 'https://www.youtube.com/', 'terdaftar'),
+(26, 9, 8, 3, '2023-08-21 17:46:42', 'gratis', 'terdaftar'),
+(27, 7, 8, 3, '2023-08-21 17:50:00', 'https://www.youtube.com/', 'selesai');
 
 -- --------------------------------------------------------
 
@@ -148,11 +144,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `alamat`, `hp`, `pekerjaan`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
-(6, 'Amin Admin', 'aminAdmin@gmail.com', 'Jakarta Barat', '082176659947', 'Kasir', 'amin2.JPG', '$2y$10$V4ZI5K9ZDS0TE1Kgo3CikO/8vlBYqms4eiJ.qw8H2puOcX2lUiGjK', 1, 1, 1689481467),
-(7, 'Amin Panitia', 'aminPanitia@gmail.com', 'Jakarta Timur', '082176659941', 'Mahasiswa', 'amin1.JPG', '$2y$10$ntDfMOeijhEfE/L5rtx.quHfgqIEVj1nvScLi/YhpLUKIoCpJpQCG', 2, 1, 1689481583),
-(8, 'Amin User', 'aminUser@gmail.com', 'Tomang, Jakarta Barat', '082176659945', 'Mahasiswa', 'amin.JPG', '$2y$10$VsKu26pAQO2xZuyYZj/0fetrWp.D./yVtmHLCO/U0pG.wyWL80XTS', 3, 1, 1689481620),
+(6, 'Amin Admin', 'aminAdmin@gmail.com', 'Jakarta Barat', '082176659947', 'Kasir', 'amin2.JPG', '$2y$10$VDG/q7Anfc0LQeJ.SoSmuuXtEb790WJrxZ6fjucK3fhHBoguA8n6G', 1, 1, 1689481467),
+(7, 'Amin Panitia', 'aminPanitia@gmail.com', 'Jakarta Timur', '082176659941', 'Mahasiswa', 'amin1.JPG', '$2y$10$iTkWEWWVClgXr.lwAUspzOtzOLihY.RT8RmM.Ly3ETzb/fdgoW3y2', 2, 1, 1689481583),
+(8, 'Amin User', 'aminUser@gmail.com', 'Tomang, Jakarta Barat', '082176659945', 'Mahasiswa', 'amin.JPG', '$2y$10$maQOZt22S4ctZWI5olh/5eysSQ2nfSHfITn5OSBAhDssVl.vu1hXy', 3, 1, 1689481620),
 (17, 'Amin2', 'amin2@gmail.com', 'sa', '082186629996', 'Fullstack Web Developer', 'default.jpg', '$2y$10$39s6da.IGcJ1JqOhAZhUDeA/T7OV45.MGV3Z4m2nuLlwPZuIfbPAa', 3, 1, 1692475055),
-(18, 'eky', 'eky@gmail.com', 'Jakarta B', '082186629996', 'Web Dev', 'default.jpg', '$2y$10$HGceMhr55dBJx4Jeny4fBeheU3vsFM6fgxNzv5fdqr1Ox0chVnDUu', 3, 1, 1692571977);
+(18, 'eky', 'eky@gmail.com', 'Jakarta B', '082186629996', 'Web Dev', 'default.jpg', '$2y$10$HGceMhr55dBJx4Jeny4fBeheU3vsFM6fgxNzv5fdqr1Ox0chVnDUu', 3, 1, 1692571977),
+(20, 'Fauzi Rahman', 'fauzi@gmail.com', 'Bandung', '085412345678', 'Eksporti', 'default.jpg', '$2y$10$W8bJrNgT.rgekkYp/cL02ukuuWwKb2Wqcg9JtjNpxT1R6ykGVethO', 3, 1, 1692633303),
+(21, 'Fauzi Panitia', 'fauziPanitia@gmail.com', 'bandung', '081245632899', 'Eksportir', 'default.jpg', '$2y$10$SXv0u0Keulr5RUjWaLmBceBt6Fy1rqOeMJMe8tDTcU32E0.zizWWK', 2, 1, 1692633635);
 
 -- --------------------------------------------------------
 
@@ -206,7 +204,8 @@ INSERT INTO `webinar` (`id_webinar`, `tema`, `tipe`, `lokasi`, `tanggal`, `waktu
 (9, 'Ekspor', 'hybrid', 'jakrata', '2023-08-31', '13:00 - 16:00', 'gratis', NULL, NULL, 3, 2, 1),
 (12, 'Webinar', 'webinar', 'online', '2023-09-09', '17.00 - selesai', 'BRI', '515743515', '25000', 1, 2, 5),
 (16, 'sad', 'webinar', 'sad', '2023-08-24', '19.00 -  selesais', 'BCA', '41456466', '50000', 1, 2, 10),
-(19, 'sadsa', 'webinar', 'sad', '2023-08-24', '17.00 - selesai', 'BCA', '1414455', '15000', 2, 3, 100);
+(19, 'sadsa', 'webinar', 'sad', '2023-08-24', '17.00 - selesai', 'BCA', '1414455', '15000', 2, 3, 100),
+(20, 'AI', 'webinar', 'online', '2023-08-20', '19.00 - selesai', 'BCA', '6144520554', '1000000', 1, 2, 10);
 
 --
 -- Indexes for dumped tables
@@ -262,13 +261,13 @@ ALTER TABLE `webinar`
 -- AUTO_INCREMENT for table `absensi`
 --
 ALTER TABLE `absensi`
-  MODIFY `id_absensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_absensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `daftar_webinar`
 --
 ALTER TABLE `daftar_webinar`
-  MODIFY `id_daftar_webinar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_daftar_webinar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `moderator`
@@ -286,7 +285,7 @@ ALTER TABLE `pembicara`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `user_role`
@@ -298,7 +297,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `webinar`
 --
 ALTER TABLE `webinar`
-  MODIFY `id_webinar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_webinar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -46,8 +46,8 @@
                             <?= form_error('hp', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="form-group">
-                            <label for="pekerjaan">Profesi</label>
-                            <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" placeholder="input Profesi" value="<?php echo $useri['pekerjaan'];?>">
+                            <label for="password">Profesi</label>
+                            <input type="text" class="form-control" id="password" name="pekerjaan" placeholder="input Profesi" value="<?php echo $useri['pekerjaan'];?>">
                             <?= form_error('pekerjaan', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="form-group">

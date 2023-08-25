@@ -46,8 +46,8 @@
                             <?= form_error('hp', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="form-group">
-                            <label for="password">Profesi</label>
-                            <input type="text" class="form-control" id="password" name="pekerjaan" placeholder="input Profesi" value="<?php echo $useri['pekerjaan'];?>">
+                            <label for="pekerjaan">Profesi</label>
+                            <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" placeholder="input Profesi" value="<?php echo $useri['pekerjaan'];?>">
                             <?= form_error('pekerjaan', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="form-group">
@@ -59,6 +59,11 @@
                                     <option value="<?= $rol['id']; ?>" <?= $rol['id'] == $useri['role_id'] ? "selected" : null ?>><?= $rol['role']; ?></option>
                                 <?php endforeach; ?>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password (jika tidak ada perubahan biarkan kosong)</label>
+                            <input type="password" class="form-control" id="password" name="new_password" placeholder="input password">
+                            <?= form_error('new_password', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                     </div>
                     <!-- /.card-body -->

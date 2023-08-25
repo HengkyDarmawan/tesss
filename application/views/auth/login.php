@@ -4,7 +4,7 @@
     <div class="card-body login-card-body">
       <h4 class="login-box-msg text-bold">Universitas xyz</h4>
       <hr>
-      <h4 class="login-box-msg text-bold">Login Webinar</h4>
+      <h4 class="login-box-msg text-bold"><?= $title;?></h4>
       <?php echo $this->session->flashdata('message'); ?>
       <form action="<?php echo base_url()?>index.php/auth" method="post">
         <div class="mb-3">
@@ -41,7 +41,7 @@
       <div class="social-auth-links text-center mb-3">
         <p>- OR -</p>
         <a href="<?php echo base_url()?>index.php/auth/registration" class="btn btn-block btn-primary">
-           Creat an account
+           Create an account
         </a>
       </div>
     </div>

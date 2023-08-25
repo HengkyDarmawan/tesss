@@ -40,7 +40,7 @@
                     <th>Lokasi</th>
                     <th>Moderator</th>
                     <th>Bank</th>
-                    <th>Harga</th>
+                    <th>Biaya</th>
                     <th>Total Perserta</th>
                   </tr>
                   </thead>
@@ -78,7 +78,7 @@
                     <th>Lokasi</th>
                     <th>Moderator</th>
                     <th>Bank</th>
-                    <th>Harga</th>
+                    <th>Biaya</th>
                     <th>Total Perserta</th>
                   </tr>
                   </tfoot>

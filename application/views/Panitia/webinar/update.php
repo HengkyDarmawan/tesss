@@ -147,7 +147,7 @@
                             <?= form_error('no_rek', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="form-group">
-                            <label for="harga">Harga</label>
+                            <label for="harga">Biaya</label>
                             <input type="text" class="form-control" id="harga" name="harga" placeholder="input harga webinar" value="<?php echo $webinar['harga'];?>" <?php echo ($webinar['bank'] == 'gratis') ? 'disabled' : ''; ?>>
                             <?= form_error('harga', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>

@@ -41,7 +41,7 @@
                     <th>Lokasi</th>
                     <th>Moderator</th>
                     <th>Bank</th>
-                    <th>Harga</th>
+                    <th>Biaya</th>
                     <th>Kuota</th>
                     <th>Action</th>
                   </tr>
@@ -93,7 +93,7 @@
                     <th>Lokasi</th>
                     <th>Moderator</th>
                     <th>Bank</th>
-                    <th>Harga</th>
+                    <th>Biaya</th>
                     <th>Kuota</th>
                     <th>Action</th>
                   </tr>

@@ -108,7 +108,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?php echo base_url();?>index.php/users/changepassword" class="nav-link">
+            <a href="<?php echo base_url();?>index.php/change/changepassword" class="nav-link">
               <i class="nav-icon fas fa-fw fa-lock"></i>
               <p>Change Password</p>
             </a>

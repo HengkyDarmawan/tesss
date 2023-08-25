@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2023 at 01:16 PM
+-- Generation Time: Aug 25, 2023 at 05:25 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -144,9 +144,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `alamat`, `hp`, `pekerjaan`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
-(6, 'Amin Admin', 'aminAdmin@gmail.com', 'Jakarta Barat', '082176659947', 'Kasir', 'amin2.JPG', '$2y$10$VDG/q7Anfc0LQeJ.SoSmuuXtEb790WJrxZ6fjucK3fhHBoguA8n6G', 1, 1, 1689481467),
-(7, 'Amin Panitia', 'aminPanitia@gmail.com', 'Jakarta Timur', '082176659941', 'Mahasiswa', 'amin1.JPG', '$2y$10$iTkWEWWVClgXr.lwAUspzOtzOLihY.RT8RmM.Ly3ETzb/fdgoW3y2', 2, 1, 1689481583),
-(8, 'Amin User', 'aminUser@gmail.com', 'Tomang, Jakarta Barat', '082176659945', 'Mahasiswa', 'amin.JPG', '$2y$10$maQOZt22S4ctZWI5olh/5eysSQ2nfSHfITn5OSBAhDssVl.vu1hXy', 3, 1, 1689481620),
+(6, 'Amin Admin', 'aminAdmin@gmail.com', 'Jakarta Barat', '082176659947', 'Kasir', 'default.jpg', '$2y$10$Cl1SRjyYc8i9nurbXf4zMObGSA42nC01hC9.R2/UKRhpraMS9JSx2', 1, 1, 1689481467),
+(7, 'Amin Panitia', 'aminPanitia@gmail.com', 'Jakarta Timur', '082176659941', 'Mahasiswa', 'default.jpg', '$2y$10$TJwIkPwafabkx9GqPqMSduw9aP0fTtwBvebObR6gQvHCauRfpYKO.', 2, 1, 1689481583),
+(8, 'Amin User', 'aminUser@gmail.com', 'Tomang, Jakarta Barat', '082176659945', 'Mahasiswa', 'default.jpg', '$2y$10$FVzaY/QgWdOpQRIctuWn7.2RKNCWe746e1S3dyrk1mITw1XPDX8/6', 3, 1, 1689481620),
 (17, 'Amin2', 'amin2@gmail.com', 'sa', '082186629996', 'Fullstack Web Developer', 'default.jpg', '$2y$10$39s6da.IGcJ1JqOhAZhUDeA/T7OV45.MGV3Z4m2nuLlwPZuIfbPAa', 3, 1, 1692475055),
 (18, 'eky', 'eky@gmail.com', 'Jakarta B', '082186629996', 'Web Dev', 'default.jpg', '$2y$10$HGceMhr55dBJx4Jeny4fBeheU3vsFM6fgxNzv5fdqr1Ox0chVnDUu', 3, 1, 1692571977),
 (20, 'Fauzi Rahman', 'fauzi@gmail.com', 'Bandung', '085412345678', 'Eksporti', 'default.jpg', '$2y$10$W8bJrNgT.rgekkYp/cL02ukuuWwKb2Wqcg9JtjNpxT1R6ykGVethO', 3, 1, 1692633303),

@@ -8,7 +8,7 @@ class Auth extends CI_Controller {
 		$this->form_validation->set_rules('password', 'Password', 'required|trim');
 
 		if($this->form_validation->run() == false){
-			$data['title'] = 'Webinar Login';
+			$data['title'] = 'Login Webinar';
 			$this->load->view('auth/header', $data);
 			$this->load->view('auth/login');
 			$this->load->view('auth/footer');
